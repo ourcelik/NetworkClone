@@ -1,14 +1,14 @@
 <template>
-  <app-header/>
+  <app-footer/>
 </template>
 
 <script>
-import AppHeader from './components/Shared/appHeader.vue';
+import AppFooter from './components/Shared/appFooter.vue';
 
 export default {
   name: 'App',
   components: {
-    AppHeader
+    AppFooter
   }
 }
 </script>

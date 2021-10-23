@@ -1,6 +1,5 @@
 <template>
   <app-header/>
-
 </template>
 
 <script>

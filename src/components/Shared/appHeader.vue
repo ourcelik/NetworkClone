@@ -1,6 +1,6 @@
 <template>
-    <header>
-        <div class="m-0 p-0 fixed-top">
+    <header class="fixed-top bg-white">
+        <div class="m-0 p-0">
             <div class="custom-container">
                 <div class="row justify-content-between align-items-center" id="header">
                     <!-- searchbar -->
@@ -68,6 +68,9 @@ export default {
 <style>
 .black-color {
     color: black;
+}
+.bg-white{
+    background-color:white ;
 }
 .custom-container {
     width: 78%;

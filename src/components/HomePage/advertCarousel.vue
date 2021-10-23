@@ -1,4 +1,7 @@
 <template>
+<div class="spacer">
+    &nbsp;
+</div>
   <div
     id="carouselExampleIndicators"
     class="carousel slide"
@@ -81,5 +84,10 @@ export default {};
   width: 10px !important;
   height: 10px !important;
   border-radius: 50%;
+}
+.spacer
+{
+    width: 100%;
+    height: 70px;
 }
 </style>

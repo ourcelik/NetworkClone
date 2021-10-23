@@ -72,10 +72,7 @@ export default {
 .bg-white{
     background-color:white ;
 }
-.custom-container {
-    width: 78%;
-    margin: auto;
-}
+
 .fs-7 {
     font-size: small;
     letter-spacing: 1px;

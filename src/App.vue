@@ -1,14 +1,17 @@
 <template>
   <app-header/>
+  <advert-carousel/>
 </template>
 
 <script>
+import AdvertCarousel from './components/HomePage/advertCarousel.vue';
 import AppHeader from './components/Shared/appHeader.vue';
 
 export default {
   name: 'App',
   components: {
-    AppHeader
+    AppHeader,
+    AdvertCarousel
   }
 }
 </script>

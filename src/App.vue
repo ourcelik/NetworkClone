@@ -1,17 +1,20 @@
 <template>
   <app-header/>
   <advert-carousel/>
+  <multi-grid-advert/>
 </template>
 
 <script>
 import AdvertCarousel from './components/HomePage/advertCarousel.vue';
 import AppHeader from './components/Shared/appHeader.vue';
+import MultiGridAdvert from './components/HomePage/multiGridAdvert.vue';
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    AdvertCarousel
+    AdvertCarousel,
+    MultiGridAdvert
   }
 }
 </script>

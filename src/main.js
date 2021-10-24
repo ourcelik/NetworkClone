@@ -5,7 +5,9 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import 'animate.css';
+
+import { far } from '@fortawesome/free-regular-svg-icons';
+library.add(far);
 library.add(fab);
 library.add(fas);
 import  './assets/style.css';

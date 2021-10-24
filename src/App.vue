@@ -4,7 +4,7 @@
   <multi-grid-advert/>
   <app-cart />
   <app-footer/>
-  
+  <favourites-not-login/>
 </template>
 
 <script>
@@ -13,6 +13,7 @@ import AppHeader from './components/Shared/appHeader.vue';
 import MultiGridAdvert from './components/HomePage/multiGridAdvert.vue';
 import AppFooter from './components/Shared/appFooter.vue';
 import AppCart from './components/Shared/appCart.vue';
+
 export default {
   name: 'App',
   components: {
@@ -21,6 +22,7 @@ export default {
     MultiGridAdvert,
     AppFooter,
     AppCart
+
   }
 }
 </script>

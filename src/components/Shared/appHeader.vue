@@ -19,9 +19,9 @@
                     <!-- settings -->
                     <div class="col-2  offset-2 d-flex justify-content-end align-items-center">
                         <div>
-                        <i class="fa fa-shopping-bag fa-lg mx-3"></i>
-                        <i class="fas fa-heart fa-lg mx-2"></i>
-                        <i class="fas fa-user fa-lg mx-2"></i>
+                        <i data-bs-toggle="modal"  data-bs-target="#cartModal" class="fa fa-shopping-bag fa-lg mx-2 pointer"></i>
+                        <i class="fas fa-heart fa-lg mx-2 pointer"></i>
+                        <i class="fas fa-user fa-lg mx-2 pointer"></i>
                         </div>
                         
                     </div>

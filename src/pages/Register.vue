@@ -1,0 +1,103 @@
+<template>
+  <section>
+    <div class="container-fluid p-0 mb-5 ">
+      <img src="../assets/images/login.jpg" class="img-thumbnail p-0 m-0 image-register  w-100" alt="login" />
+      <div class="login-position  w-22 row bg-white border-left border-right border-bottom">
+        <div class="col-12 row p-0 m-0 bb-4  bg-transparent">
+          <button
+            class="col-4 text-uppercase m-0 py-3 border-0 border-end fw-bold router-button-text  bg-c-gray fs-6 ls-small"
+            :class="activeButton(Tabs.Login)"
+            @click="activeTabChange(Tabs.Login)"
+          >GİRİŞ YAP</button>
+          <button
+            class="col-4 text-uppercase m-0 py-3 border-0 border-end bg-c-gray router-button-text fw-bold fs-6 ls-small"
+            :class="activeButton(Tabs.Register)"
+            @click="activeTabChange(Tabs.Register)"
+          >ÜYE OL</button>
+          <button
+            class="col-4 text-uppercase m-0 py-3 border-0  bg-c-gray fw-bold router-button-text fs-6 ls-small"
+            :class="activeButton(Tabs.OrderFollow)"
+            @click="activeTabChange(Tabs.OrderFollow)"
+          >SİPARİŞ TAKİBİ</button>
+        </div>
+        <div class="col-12 d-flex flex-column justify-content-around">
+         <keep-alive>
+          <component :is="activeTab"></component>
+         </keep-alive>
+        </div>
+      </div>
+      <img />
+    </div>
+  </section>
+</template>
+
+<script>
+import Login from '../components/RegisterPage/login.vue';
+import Register from '../components/RegisterPage/register.vue';
+import OrderFollow from '../components/RegisterPage/orderFollow.vue';
+export default {
+  components: {
+    Login,
+    Register,
+    OrderFollow
+  },
+  data() {
+    return {
+      activeTab: "Login",
+      Tabs: {
+        'Login':'Login',
+        'Register':'Register',
+        'OrderFollow':'OrderFollow',
+      },
+      
+    }
+  },
+  methods: {
+    activeTabChange(tab) {
+      this.activeTab = tab;
+    },
+    activeButton(tab){
+      return {'active' : (tab == this.activeTab)};
+    }
+  },
+
+}
+</script>
+
+<style>
+.image-register {
+  object-fit: fill;
+  position: relative;
+  z-index: 1;
+}
+.login-position {
+  position: absolute;
+  right: 2%;
+  top: 165px;
+  z-index: 2;
+}
+.w-22 {
+  width: 24%;
+}
+.bg-c-gray {
+  background-color: #f8f8f8;
+}
+.font-small {
+  font-size: 15px;
+}
+.bb-4 {
+  border-bottom: 4px solid #1c1c1c;
+}
+.router-button-text{
+  color: #777777;
+}
+.active {
+  background-color: #1c1c1c;
+  color: white;
+  border-color: black !important;
+  border-top: 10px solid black !important;
+}
+.ls-small{
+  letter-spacing: -1px;
+}
+</style>

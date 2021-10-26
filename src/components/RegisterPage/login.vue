@@ -11,7 +11,7 @@
             <input class="w-100 py-2 custom-tinput" type="text" name="password" id="password">
           </div>
          
-          <div id="InfoArea" class="d-flex justify-content-between mx-3 mt-3 w-75">
+          <div id="InfoArea" class="d-flex justify-content-between mx-0 mt-3 w-75">
             <div id="rememberMeArea" class="d-flex align-items-center">
                <input type="checkbox"  id="check"/>
                 <label for="check" class="mx-2 align-self-start remember-pass-label  font-small fw-bold" >Beni Hatırla</label>

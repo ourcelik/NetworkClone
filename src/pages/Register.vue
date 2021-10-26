@@ -3,19 +3,19 @@
     <div class="container-fluid p-0 mb-5 ">
       <img src="../assets/images/login.jpg" class="img-thumbnail p-0 m-0 image-register  w-100" alt="login" />
       <div class="login-position  w-22 row bg-white border-left border-right border-bottom">
-        <div class="col-12 row p-0 m-0 bb-4  bg-transparent">
+        <div class="col-12 row p-0 m-0 bb-4">
           <button
-            class="col-4 text-uppercase m-0 py-3 border-0 border-end fw-bold router-button-text  bg-c-gray fs-6 ls-small"
+            class="col-4 text-uppercase m-0 py-2 border-0 px-0 border-end fw-bold router-button-text bg-c-gray fs-6 ls-small"
             :class="activeButton(Tabs.Login)"
             @click="activeTabChange(Tabs.Login)"
           >GİRİŞ YAP</button>
           <button
-            class="col-4 text-uppercase m-0 py-3 border-0 border-end bg-c-gray router-button-text fw-bold fs-6 ls-small"
+            class="col-4 text-uppercase m-0 py-3 border-0 px-0 border-end bg-c-gray router-button-text fw-bold fs-6 ls-small"
             :class="activeButton(Tabs.Register)"
             @click="activeTabChange(Tabs.Register)"
           >ÜYE OL</button>
           <button
-            class="col-4 text-uppercase m-0 py-3 border-0  bg-c-gray fw-bold router-button-text fs-6 ls-small"
+            class="col-4 text-uppercase m-0 py-3 border-0  px-0 bg-c-gray fw-bold router-button-text fs-6 ls-small"
             :class="activeButton(Tabs.OrderFollow)"
             @click="activeTabChange(Tabs.OrderFollow)"
           >SİPARİŞ TAKİBİ</button>
@@ -77,7 +77,7 @@ export default {
   z-index: 2;
 }
 .w-22 {
-  width: 24%;
+  width: auto;
 }
 .bg-c-gray {
   background-color: #f8f8f8;

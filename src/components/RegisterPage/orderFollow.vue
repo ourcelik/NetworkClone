@@ -14,8 +14,12 @@
           <button class="custom-button w-100 p-3">SİPARİSİMİ GETİR</button>
         </div>
         <div class="text-start w-75">
-          <hr class="mt-1 w-100"/>
+          <hr class="mt-2 mb-4 w-100"/>
+         
         </div>
+        <div class="text-start w-75">
+          <span class="w-100 font-small">Üye girişi yaparak da siparişlerinizi kolaylıkla takip edebilirsiniz.</span>
+          </div>
         <!-- <div class="text-start w-75 bg-primary">
           <div>
             <span class="font-small text-wrap" for="">Üye girişi yaparak da siparişlerinizi kolaylıkla takip edebilirsiniz.</span>
@@ -46,5 +50,11 @@ export default {
 }
 .custom-white-button:hover {
   background-color: #ff5d5d;
+  color: white;
+  border: 1px solid #ff5d5d;
+  transition: 0.15s color ease-in;
+}
+.lh-1{
+  line-height: 0px;
 }
 </style>

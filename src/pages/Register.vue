@@ -77,7 +77,7 @@ export default {
   z-index: 2;
 }
 .w-22 {
-  width: auto;
+  width: 415px;
 }
 .bg-c-gray {
   background-color: #f8f8f8;

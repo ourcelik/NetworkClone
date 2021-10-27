@@ -32,7 +32,7 @@
                         <a
                             v-for="category in categories"
                             :key="category.id"
-                            class="black-color fs-6 p-0 text-decoration-none menu-link"
+                            class="black-color fs-6 p-0 pb-1 text-decoration-none menu-link"
                             href="#"
                         >
                             <span class="fs-7">{{ category.name }}</span>
@@ -79,11 +79,11 @@ export default {
 }
 .menu-link{
     transition: 0.1s all ease-in-out;
-    border-bottom: 2px solid white;
+    border-bottom: 3px solid white;
 
 }
 .menu-link:hover{
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid black;
     color: black;
 }
 /* search */

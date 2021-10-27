@@ -34,3 +34,12 @@
   border: 1px solid #cccccc;
   outline: none;
 }
+
+.custom-orange-link{
+  color: #5f545f;
+  transition: 0.13s color ease-in;
+}
+.custom-orange-link:hover
+{
+  color: orangered;
+}

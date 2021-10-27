@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container-fluid p-0 mb-5 ">
-      <img src="../assets/images/login.jpg" class="img-thumbnail p-0 m-0 image-register  w-100" alt="login" />
+      <img :style="imageWidth(activeTab)" src="../assets/images/login.jpg" class="img-thumbnail p-0 m-0 image-register  w-100" alt="login" />
       <div class="login-position  w-22 row bg-white border-left border-right border-bottom">
         <div class="col-12 row p-0 m-0 bb-4">
           <button
@@ -45,19 +45,25 @@ export default {
     return {
       activeTab: "Login",
       Tabs: {
-        'Login':'Login',
-        'Register':'Register',
-        'OrderFollow':'OrderFollow',
+        'Login':{name:'Login',height:null},
+        'Register':{name:'Register',height:'1500px'},
+        'OrderFollow':{name:'OrderFollow',height:null},
       },
       
     }
   },
   methods: {
     activeTabChange(tab) {
-      this.activeTab = tab;
+      this.activeTab = tab.name;
     },
     activeButton(tab){
-      return {'active' : (tab == this.activeTab)};
+      return {'active' : (tab.name == this.activeTab)};
+    },
+    imageWidth(currentTabName){
+
+      let tab = this.Tabs[currentTabName];
+
+      return tab.height != null ? {height:tab.height} : {}
     }
   },
 
@@ -66,7 +72,7 @@ export default {
 
 <style>
 .image-register {
-  object-fit: fill;
+  object-fit: cover;
   position: relative;
   z-index: 1;
 }

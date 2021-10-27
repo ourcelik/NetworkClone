@@ -17,7 +17,7 @@
                 <label for="check" class="mx-2 align-self-start remember-pass-label  font-small fw-bold" >Beni Hatırla</label>
             </div>
             <div id="forgetPassword">
-              <a href="#" class="forget-pass-link fw-bold font-small">Şifremi Unuttum</a>
+              <a href="#" class="custom-orange-link fw-bold font-small">Şifremi Unuttum</a>
             </div>
           </div>
           <div class="w-75 my-5">
@@ -36,13 +36,7 @@ export default {
 
 <style>
 
-.forget-pass-link{
-  color: #5f545f;
-}
-.forget-pass-link:hover
-{
-  color: orangered;
-}
+
 .remember-pass-label{
   color: #5f545f ;
 }

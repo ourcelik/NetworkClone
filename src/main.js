@@ -5,7 +5,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-
+import 'animate.css';
 import { far } from '@fortawesome/free-regular-svg-icons';
 library.add(far);
 library.add(fab);
@@ -20,6 +20,5 @@ import  './assets/style.css';
 import { dom } from "@fortawesome/fontawesome-svg-core";
 dom.watch();
 const app =  createApp(App)
-
 
 app.mount('#app')

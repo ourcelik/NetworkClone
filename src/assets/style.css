@@ -1,8 +1,45 @@
-
 .custom-container {
-    width: 78%;
-    margin: auto;
+  width: 87%;
+  margin: auto;
 }
-.pointer{
-    cursor: pointer;
+.pointer {
+  cursor: pointer;
+}
+
+/* custombutton */
+.custom-button {
+  color: white;
+  background-color: #1c1c1c;
+  border: 0px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+.custom-button:hover {
+  background-color: #ff5d5d;
+}
+/* .custom-button */
+
+.custom-tinput {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+}
+.custom-tlabel {
+  color: #5f545f;
+}
+.font-small {
+  font-size: small !important;
+}
+.custom-tinput:focus {
+  border-radius: 0;
+  border: 1px solid #cccccc;
+  outline: none;
+}
+
+.custom-orange-link{
+  color: #5f545f;
+  transition: 0.13s color ease-in;
+}
+.custom-orange-link:hover
+{
+  color: orangered;
 }

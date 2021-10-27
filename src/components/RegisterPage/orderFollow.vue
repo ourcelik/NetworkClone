@@ -20,11 +20,6 @@
         <div class="text-start w-75">
           <span class="w-100 font-small">Üye girişi yaparak da siparişlerinizi kolaylıkla takip edebilirsiniz.</span>
           </div>
-        <!-- <div class="text-start w-75 bg-primary">
-          <div>
-            <span class="font-small text-wrap" for="">Üye girişi yaparak da siparişlerinizi kolaylıkla takip edebilirsiniz.</span>
-          </div>
-        </div> -->
         <div class="w-75 my-3">
           <button class="custom-white-button w-100 p-2">OTURUM AÇ</button>
         </div>

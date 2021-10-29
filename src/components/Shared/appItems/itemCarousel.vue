@@ -3,7 +3,7 @@
     <div class="mt-5">
       <h4>Sizin İçin Seçtiklerimiz</h4>
     </div>
-    <Carousel class="custom-container mt-2" :settings="settings" :breakpoints="breakpoints">
+    <Carousel class="custom-container mt-2 " :settings="settings" :breakpoints="breakpoints">
       <Slide v-for="slide in 100" :key="slide">
         <item class="pointer" />
       </Slide>

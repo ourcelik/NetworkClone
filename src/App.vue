@@ -1,7 +1,7 @@
 <template>
     <app-header/>
     <advert-carousel/>
-    <itemCarousel/>
+    <item-carousel/>
     <multi-grid-advert/>
     <social-network/>
     <app-cart/>
@@ -12,7 +12,7 @@
 import AppHeader from './components/Shared/Header/appHeader.vue';
 import AdvertCarousel from './components/HomePage/advertCarousel.vue';
 import AppCart from './components/Shared/appCart.vue';
-import AppFooter from './components/Shared/appFooter.vue';
+import AppFooter from './components/Shared/Footer/appFooter.vue';
 import MultiGridAdvert from './components/HomePage/multiGridAdvert.vue';
 import ItemCarousel from './components/Shared/appItems/itemCarousel.vue';
 import SocialNetwork from './components/HomePage/socialNetwork.vue';

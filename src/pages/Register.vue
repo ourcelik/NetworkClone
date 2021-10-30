@@ -57,7 +57,7 @@ export default {
       this.activeTab = tab.name;
     },
     activeButton(tab){
-      return {'active' : (tab.name == this.activeTab)};
+      return {'register-active' : (tab.name == this.activeTab)};
     },
     imageWidth(currentTabName){
 
@@ -97,7 +97,7 @@ export default {
 .router-button-text{
   color: #777777;
 }
-.active {
+.register-active {
   background-color: #1c1c1c;
   color: white;
   border-color: #1c1c1c !important;

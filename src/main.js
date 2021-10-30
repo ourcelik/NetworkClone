@@ -18,7 +18,8 @@ import  './assets/style.css';
 
 
 import { dom } from "@fortawesome/fontawesome-svg-core";
+import router from './router';
 dom.watch();
 const app =  createApp(App)
-
+app.use(router);
 app.mount('#app')

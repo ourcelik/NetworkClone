@@ -1,6 +1,6 @@
 <template>
     <app-header/>
-    <favourites/>
+    <router-view/>
     <app-cart/>
     <app-footer/>
 </template>
@@ -9,7 +9,6 @@
 import AppHeader from './components/Shared/Header/appHeader.vue';
 import AppCart from './components/Shared/appCart.vue';
 import AppFooter from './components/Shared/Footer/appFooter.vue';
-import Favourites from './pages/Favourites.vue';
 
 
 export default {
@@ -18,7 +17,6 @@ export default {
     AppHeader,
     AppCart,
     AppFooter,
-    Favourites
 }
 }
 </script>

@@ -100,8 +100,8 @@ export default {
 .active {
   background-color: #1c1c1c;
   color: white;
-  border-color: black !important;
-  border-top: 10px solid black !important;
+  border-color: #1c1c1c !important;
+  border-top: 10px solid #1c1c1c !important;
 }
 .ls-small{
   letter-spacing: -1px;

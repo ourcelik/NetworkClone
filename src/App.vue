@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import AppHeader from './components/Shared/appHeader.vue';
+import AppHeader from './components/Shared/Header/appHeader.vue';
 import AdvertCarousel from './components/HomePage/advertCarousel.vue';
 import AppCart from './components/Shared/appCart.vue';
 import AppFooter from './components/Shared/appFooter.vue';

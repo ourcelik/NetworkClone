@@ -8,17 +8,24 @@
             </div>
         </form>
         <!-- logo -->
-        <img class="mt-2 p-3 col-4" :src="logo.url" :style="{ width: logo.width }" alt />
+        <img @click="$router.push('/')" class="mt-2 p-3 col-4 pointer" :src="logo.url" :style="{ width: logo.width }" alt />
         <!-- settings -->
         <div class="col-2 offset-2 d-flex justify-content-end align-items-center">
             <div>
                 <i
                     data-bs-toggle="modal"
                     data-bs-target="#cartModal"
-                    class="fa fa-shopping-bag fa-lg mx-2 pointer"
+                    class="fa fa-shopping-bag fa-lg mx-2 pointer settings-icon"
                 ></i>
-                <i class="fas fa-heart fa-lg mx-2 pointer"></i>
-                <i class="fas fa-user fa-lg mx-2 pointer"></i>
+                <router-link to="/favourites">
+                <i class="fas fa-heart fa-lg mx-2 pointer settings-icon"></i>
+                </router-link>
+                    
+                
+                    
+                <router-link to="/register">
+                <i class="fas fa-user fa-lg mx-2 pointer settings-icon"></i>
+                </router-link>
             </div>
         </div>
     </div>
@@ -34,5 +41,19 @@ export default {
             logo: { id: 0, url: 'https://www.network.com.tr/assets/v2/img/Network.jpg', width: '220px' },
         }
     },
+    methods:{
+        log(){
+            console.log("sa");
+        }
+    }
 }
 </script>
+
+<style>
+.settings-icon{
+    color:#2c3e50;
+}
+.router-link-active{
+    color:#2c3e50;
+}
+</style>

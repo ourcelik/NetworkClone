@@ -1,21 +1,14 @@
 <template>
     <app-header/>
-    <advert-carousel/>
-    <item-carousel/>
-    <multi-grid-advert/>
-    <social-network/>
+    <router-view/>
     <app-cart/>
     <app-footer/>
 </template>
 
 <script>
 import AppHeader from './components/Shared/Header/appHeader.vue';
-import AdvertCarousel from './components/HomePage/advertCarousel.vue';
 import AppCart from './components/Shared/appCart.vue';
 import AppFooter from './components/Shared/Footer/appFooter.vue';
-import MultiGridAdvert from './components/HomePage/multiGridAdvert.vue';
-import ItemCarousel from './components/Shared/appItems/itemCarousel.vue';
-import SocialNetwork from './components/HomePage/socialNetwork.vue';
 
 
 export default {
@@ -23,11 +16,7 @@ export default {
   components: {
     AppHeader,
     AppCart,
-    AdvertCarousel,
     AppFooter,
-    MultiGridAdvert,
-    ItemCarousel,
-    SocialNetwork
 }
 }
 </script>

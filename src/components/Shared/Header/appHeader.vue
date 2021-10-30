@@ -3,8 +3,9 @@
         <div class="m-0 p-0">
             <div class="custom-container">
                 <header-top/>
-                <hr class="m-2 my-2 mx-0"/>
+                <hr class="m-2 my-2 mx-0 custom-hr"/>
                 <header-menu/>
+                <hr class="m-2 my-0 mx-0 custom-hr"/>
                
             </div>
         </div>
@@ -46,7 +47,9 @@ export default {
     color: black;
 }
 /* search */
-
+.custom-hr{
+    color: #adadad;
+}
 
 
 

@@ -5,7 +5,7 @@
     </div>
     <Carousel class="custom-container mt-2 " :settings="settings" :breakpoints="breakpoints">
       <Slide v-for="slide in 100" :key="slide">
-        <item class="pointer" />
+        <item @click="goToItemPage()" class="pointer" />
       </Slide>
 
       <template #addons>
@@ -52,6 +52,11 @@ export default defineComponent({
       },
     },
   }),
+  methods:{
+    goToItemPage(){
+      this.$router.push({name:'ItemDetailPage'});
+    }
+  }
 });
 </script>
 <style>

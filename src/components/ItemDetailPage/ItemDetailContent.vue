@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex flex-column justify-content-start align-items-start mt-3">
+    <div class="d-flex flex-column justify-content-start align-items-start mt-3 ">
         <h5 class="font-small">{{ itemDetails.type }}</h5>
         <h4 class="fw-bold">{{ itemDetails.name }}</h4>
         <p class="fw-bold">{{ itemDetails.price }} TL</p>

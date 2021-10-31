@@ -7,7 +7,7 @@
 
 <script>
 import AppHeader from './components/Shared/Header/appHeader.vue';
-import AppCart from './components/Shared/appCart.vue';
+import AppCart from './components/Shared/Cart/appCart.vue';
 import AppFooter from './components/Shared/Footer/appFooter.vue';
 
 

@@ -29,6 +29,9 @@
 .font-small {
   font-size: small !important;
 }
+.font-xsmall {
+  font-size: x-small !important;
+}
 .custom-tinput:focus {
   border-radius: 0;
   border: 1px solid #cccccc;

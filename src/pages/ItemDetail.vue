@@ -2,10 +2,10 @@
     <section class="header-margin custom-container">
         <app-breadcrumb />
         <div class="row">
-            <div class="col-8 text center">
+            <div class="col-8  text-center">
                 <item-detail-photo-list :photoList="item.photos" />
             </div>
-            <div class="col-4 text center">
+            <div class="col-4 text-center">
                 <item-detail-content :itemDetails="item.content" />
             </div>
         </div>

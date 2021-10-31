@@ -101,7 +101,6 @@ export default {
   background-color: #1c1c1c;
   color: white;
   border-color: #1c1c1c !important;
-  border-top: 10px solid #1c1c1c !important;
 }
 .ls-small{
   letter-spacing: -1px;

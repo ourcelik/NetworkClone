@@ -15,7 +15,7 @@
               <img class="img-fluid  py-1 px-0 m-0" alt="leisure wear" id="222" src="https://img-network.mncdn.com/bannerimages/B1-SLIDER_2021090611293785071.jpg">
           </div>
           <div class="col-4 row p-1 m-0">
-              <div class = "col-12  p-1 m-0">
+              <div class = "col-12 p-1 m-0">
                   <img class="img-fluid  p-1 m-0" alt="Kadın ayakkabı" id="232" src="https://img-network.mncdn.com/bannerimages/B2_2021090611315803653.jpg">
               </div>
               <div class = "col-12 p-1 m-0">

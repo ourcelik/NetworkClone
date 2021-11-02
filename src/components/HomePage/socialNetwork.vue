@@ -43,7 +43,7 @@
           id="socialImage"
         />
         <div class="img_desc d-flex justify-content-center" id="socialImageDesc">
-          <img src="../../assets/images/insta.jpg" alt="">
+         <i class="fab fa-instagram mt-1 mx-1"></i>
           <p class="p-0 m-0">Alışverişe başla</p>
         </div>
         

@@ -15,7 +15,7 @@
                     </div>
                     <div class="row col-5 offset-2 my-3">
                         <div class="col-2 d-flex justify-content-center align-items-center">
-                            <i class="fas fa-truck fa-2x"></i>
+                            <i class="fas fa-credit-card fa-2x"></i>
                         </div>
                         <div class="col-10">
                             <div class="d-flex flex-column justify-content-center">
@@ -28,7 +28,7 @@
                     </div>
                     <div class="row col-5 my-2">
                         <div class="col-2 d-flex justify-content-center align-items-center">
-                            <i class="fas fa-truck fa-2x"></i>
+                           <i class="fas fa-home fa-2x"></i>
                         </div>
                         <div class="col-10">
                             <div class="d-flex flex-column justify-content-center">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="row col-5 offset-2 my-2">
                         <div class="col-2 d-flex justify-content-center align-items-center">
-                            <i class="fas fa-truck fa-2x"></i>
+                            <i class="fas fa-mobile-alt fa-2x"></i>
                         </div>
                         <div class="col-10">
                             <div class="d-flex flex-column justify-content-center">

@@ -1,5 +1,5 @@
 <template>
- <div style="width: 17rem;">
+ <div>
   <img src="https://img-network.mncdn.com/productimages/2400405890424_1.jpg" class="card-img-top custom-card-img" alt="...">
   <div class="text-start" >
     <h5 class="card-title">Slim Fit Camel Jean Pantolon</h5>

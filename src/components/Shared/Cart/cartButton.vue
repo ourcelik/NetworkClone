@@ -8,7 +8,7 @@
               </div>
               <div>
                 <button class="custom-button-cart mx-2 col-11">
-                  SEPETE EKLE
+                  SEPETE GİT
                 </button>
               </div>
             </div>

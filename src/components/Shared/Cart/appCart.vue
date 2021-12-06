@@ -9,9 +9,9 @@
   >
     <div class="modal-dialog m-0 modal-dialog-custom">
       <div id="modal-custom" class="modal-content mt-0 modal-custom rounded-0">
-        <div class="modal-header no-border h-10 mx-4">
+        <div class="modal-header no-border h-10 mr-5">
           <div class="d-flex align-items-center w-100 h-100">
-            <i class="fa fa-shopping-bag fa-lg mr-5 fa-lg"></i>
+            <img src="../../../assets/images/cart.png" class="mx-2" alt="" srcset="">
             <h5 class="ls-1 mt-2">Sepetim</h5>
             <button
               type="button"
@@ -163,5 +163,8 @@ export default {
   transition: 0.3s all ease;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+.mr-5{
+  margin-right: 5px;
 }
 </style>

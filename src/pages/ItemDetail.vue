@@ -10,14 +10,20 @@
             </div>
         </div>
     </section>
+        <item-carousel :itemCarouselsettings="itemCarouselSettings" :title="'İlginizi Çekebilecek Ürünler'"/>
+        <item-carousel :itemCarouselsettings="itemCarouselSettings" :title="'Görünümü Tamamla'"/>
+        <item-carousel :itemCarouselsettings="itemCarouselSettings" :title="'Son Gezilenler'"/>
+
+
 </template>
 
 <script>
 import AppBreadcrumb from "../components/Shared/appBreadcrumb.vue";
 import ItemDetailPhotoList from "../components/ItemDetailPage/ItemDetailPhotoList.vue";
 import ItemDetailContent from "../components/ItemDetailPage/ItemDetailContent.vue";
+import ItemCarousel from "../components/HomePage/itemCarousel.vue";
 export default {
-    components: { AppBreadcrumb, ItemDetailPhotoList, ItemDetailContent},
+    components: { AppBreadcrumb, ItemDetailPhotoList, ItemDetailContent,  ItemCarousel },
 
     data() {
         return {
@@ -64,7 +70,15 @@ export default {
                     "https://img-network.mncdn.com/mnresize/491/754/productimages/2400405890677_5.jpg",
                     "https://img-network.mncdn.com/mnresize/491/754/productimages/2400405890677_6.jpg"
                 ],
+            },
+            itemCarouselSettings: {
+                itemWidth: "21rem",
+                mobile: 2,
+                tablet: 3,
+                desktop: 4,
+                buttonVisible: false
             }
+            
         }
     },
 }

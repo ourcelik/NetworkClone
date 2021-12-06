@@ -108,7 +108,7 @@ export default defineComponent({
 <style>
 .socialFont {
   font-size: 18px;
-  color: 182c42;
+  color: #182c42;
 }
 
 .custom-socialNetwork-button {
@@ -185,6 +185,5 @@ export default defineComponent({
   border:2px solid rgb(255, 255, 255) !important;
   color: rgb(255, 255, 255);
   opacity:1;
-
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
-    <div class="custom-container">
+    <div class="custom-container py-3 px-0">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex justify-content-start align-items-end w-25">
                     <img
                         alt="A&amp;Y Marka"
-                        class="img-responsive w-10 mx-3"
+                        class="img-responsive w-15 "
                         src="https://www.network.com.tr/assets/v2/img/aymarka-logo.svg"
                     />
-                    <span class="small-font mx-3">Network bir Aymarka markasıdır</span>
+                    <span class="small-font mx-4">Network bir Aymarka markasıdır</span>
                 </div>
                 <div class="d-flex align-items-end">
                     <span>
@@ -75,3 +75,11 @@
             </div>
         </div>
 </template>
+
+<style>
+
+.w-15{
+    width: 3rem;
+}
+
+</style>

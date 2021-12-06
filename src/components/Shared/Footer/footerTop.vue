@@ -1,10 +1,10 @@
 <template>
-    <div class="custom-container">
+    <div class="custom-container mt-5 pt-5">
             <div class="row">
                 <div class="col-6 row">
                     <div class="row col-5 my-2">
                         <div class="col-2 d-flex justify-content-center align-items-center">
-                            <i class="fas fa-truck fa-2x"></i>
+                            <img src="../../../assets/images/delivery.png" alt="">
                         </div>
                         <div class="col-10">
                             <div class="d-flex flex-column justify-content-center">
@@ -15,7 +15,7 @@
                     </div>
                     <div class="row col-5 offset-2 my-3">
                         <div class="col-2 d-flex justify-content-center align-items-center">
-                            <i class="fas fa-credit-card fa-2x"></i>
+                            <img src="../../../assets/images/creditcard.png" alt="">
                         </div>
                         <div class="col-10">
                             <div class="d-flex flex-column justify-content-center">
@@ -28,7 +28,7 @@
                     </div>
                     <div class="row col-5 my-2">
                         <div class="col-2 d-flex justify-content-center align-items-center">
-                           <i class="fas fa-home fa-2x"></i>
+                           <img src="../../../assets/images/home.png" alt="">
                         </div>
                         <div class="col-10">
                             <div class="d-flex flex-column justify-content-center">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="row col-5 offset-2 my-2">
                         <div class="col-2 d-flex justify-content-center align-items-center">
-                            <i class="fas fa-mobile-alt fa-2x"></i>
+                            <img src="../../../assets/images/phone.png" alt="">
                         </div>
                         <div class="col-10">
                             <div class="d-flex flex-column justify-content-center">
@@ -71,18 +71,18 @@
                             <p
                                 class="footer-text"
                             >NetWork uygulamasının ayrıcalıklı dünyasını keşfetmeye davetlisiniz.</p>
-                            <div class="d-flex justify-content-center mx-5">
+                            <div class="d-flex justify-content-start mx-3">
                                 <div>
                                     <img
                                         class="w-75"
-                                        src="https://img-network.mncdn.com/contents/images/Network/Footer/appstore.png"
+                                        src="../../../assets/images/appstore.png"
                                         alt=""
                                     />
                                 </div>
                                 <div>
                                     <img
                                         class="w-75"
-                                        src="https://img-network.mncdn.com/contents/images/Network/Footer/appstore.png"
+                                        src="../../../assets/images/playstore.png"
                                         alt=""
                                     />
                                 </div>

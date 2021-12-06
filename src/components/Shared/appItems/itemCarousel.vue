@@ -5,7 +5,7 @@
     </div>
     <Carousel class="custom-container mt-2 " :settings="settings" :breakpoints="breakpoints">
       <Slide v-for="slide in 100" :key="slide">
-        <item @click="goToItemPage()" class="pointer" />
+        <item @click="goToItemPage()" class="pointer"/>
       </Slide>
 
       <template #addons>
@@ -79,5 +79,7 @@ export default defineComponent({
   font-size: 35px !important;
   border: 1px solid black;
   background-color: transparent;
+  margin-left: -20px;
+  margin-right: -20px;
 }
 </style>

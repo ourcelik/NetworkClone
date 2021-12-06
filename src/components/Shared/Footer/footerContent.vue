@@ -2,7 +2,7 @@
     <div class="container-fluid">
             <div class="row">
                 <div class="col-4 row border p-0 m-0">
-                    <div class="col-8 py-4 text-start offset-4 d-flex flex-column">
+                    <div class="col-8 py-4 text-start offset-3 d-flex flex-column">
                         <div class="mb-4">
                             <img class="my-2" :src="logo.url" :style="{ width: logo.width }" alt />
                             <p
@@ -111,7 +111,7 @@
                             href="#"
                         >Mesafeli Satış Sözleşmesi</a>
                     </div>
-                    <div class="col-2 d-flex flex-column justify-content-between">
+                    <div class="col-3 d-flex flex-column justify-content-between">
                         <h5 class="text-start">Müşteri Hizmetleri</h5>
                         <a
                             class="text-decoration-none text-start c-gray small-font"

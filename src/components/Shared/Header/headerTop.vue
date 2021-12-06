@@ -12,19 +12,24 @@
         <!-- settings -->
         <div class="col-2 offset-2 d-flex justify-content-end align-items-center">
             <div>
-                <i
-                    data-bs-toggle="modal"
+               
+                <img src="../../../assets/images/cart.png"
+                data-bs-toggle="modal"
                     data-bs-target="#cartModal"
-                    class="fa fa-shopping-bag fa-lg mx-2 pointer settings-icon"
-                ></i>
+                    class=" mx-2 pointer settings-icon"
+                    alt=""/>
                 <router-link to="/favourites">
-                <i class="fas fa-heart fa-lg mx-2 pointer settings-icon"></i>
+                <img src="../../../assets/images/heart.png" alt=""
+                class=" mx-2 pointer settings-icon"
+                />
                 </router-link>
                     
                 
                     
                 <router-link to="/register">
-                <i class="fas fa-user fa-lg mx-2 pointer settings-icon"></i>
+                <img src="../../../assets/images/profile.png" alt=""
+                class=" mx-2 pointer settings-icon"
+                />
                 </router-link>
             </div>
         </div>

@@ -13,7 +13,10 @@
     </div>
     <div class="d-flex flex-column justify-content-between mx-3">
       <p class="fw-bold">2.299.00 TL</p>
-      <div class="align-self-end pointer" @click="removeItem(item.content.id)"><i class="far fa-trash-alt align-self-end"></i></div>
+      <div class="align-self-end pointer" @click="removeItem(item.content.id)">
+      <img src="../../../assets/images/trash.png" class="align-self-end" alt="" srcset="">
+    
+      </div>
     </div>
   </div>
 </template>

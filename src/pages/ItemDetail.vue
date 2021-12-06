@@ -17,7 +17,7 @@ import AppBreadcrumb from "../components/Shared/appBreadcrumb.vue";
 import ItemDetailPhotoList from "../components/ItemDetailPage/ItemDetailPhotoList.vue";
 import ItemDetailContent from "../components/ItemDetailPage/ItemDetailContent.vue";
 export default {
-    components: { AppBreadcrumb, ItemDetailPhotoList, ItemDetailContent },
+    components: { AppBreadcrumb, ItemDetailPhotoList, ItemDetailContent},
 
     data() {
         return {

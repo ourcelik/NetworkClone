@@ -21,9 +21,11 @@
             <hr class="mt-0" />
             <div id="size_list" class="d-flex justify-content-between mx-3">
                 <span
-                    class="fw-bold font-small"
+                    class="fw-bold font-small pointer custom-body-size"
+                    :class="{'bg-black': item === currentSize,'c-white': item === currentSize}"
                     v-for="(item, index) in itemDetails.sizes"
                     :key="index"
+                    @click="changeCurrentSize(item)"
                 >{{ item }}</span>
             </div>
             <hr />
@@ -31,7 +33,7 @@
         <div id="cart-add" class="align-self-stretch row align-items-center mt-4">
             <button class="custom-button-cart mx-2 col-9">SEPETE EKLE</button>
             <div class="col-1 mx-2 ">
-                <i class="fas fa-heart fa-2x pointer"></i>
+                <img src="../../assets/images/heart2.png" class="pointer heart-custom" alt="">
             </div>
         </div>
         <div class="w-100 mt-5">
@@ -127,13 +129,18 @@ export default {
     ],
     data() {
         return {
-            currentColor: "Haki"
+            currentColor: "Haki",
+            currentSize: "None",
         }
     },
     methods: {
         changeCurrentOver(name) {
             this.currentColor = name;
-        }
+        },
+        changeCurrentSize(name) {
+            console.log(name);
+            this.currentSize = name;
+        },
     },
 }
 
@@ -190,5 +197,18 @@ export default {
 
 .c-gray {
     color: gray;
+}
+.custom-body-size{
+    transition: all 00.3s ease;
+    padding: 8px 12px;
+}
+.custom-body-size:hover{
+color: gray;
+}
+.c-white{
+    color: white;
+}
+.heart-custom{
+    width: 2rem;
 }
 </style>

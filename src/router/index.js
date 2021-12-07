@@ -20,6 +20,11 @@ const routes = [
         name:"ItemDetailPage",
         path:"/itemdetail",
         component:()=> import("@/pages/ItemDetail")
+    },
+    {
+        name:"CartPage",
+        path:"/cart",
+        component:()=> import("@/pages/Cart")
     }
 ];
 

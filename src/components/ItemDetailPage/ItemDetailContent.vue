@@ -148,11 +148,7 @@ export default {
 </script>
 
 <style>
-.item-color {
-    border-radius: 50%;
-    border: 1px solid black;
-    padding: 13px;
-}
+
 .custom-button-cart {
     color: white;
     background-color: #1c1c1c;

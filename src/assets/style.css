@@ -32,6 +32,12 @@
 .font-xsmall {
   font-size: x-small !important;
 }
+.font-little-small {
+  font-size: 0.85em !important;
+}
+.font-title{
+  font-size: 0.95em !important;
+}
 .custom-tinput:focus {
   border-radius: 0;
   border: 1px solid #cccccc;
@@ -46,3 +52,16 @@
 {
   color: orangered;
 }
+.c-gray{
+  color: #919191;
+}
+.c-black{
+  color: #1c1c1c !important;
+}
+.item-color {
+  border-radius: 50%;
+  border: 1px solid black;
+  padding: 13px;
+}
+
+.context-menu {cursor: context-menu !important;}

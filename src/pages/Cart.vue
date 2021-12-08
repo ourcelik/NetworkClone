@@ -3,11 +3,11 @@
         <div class="col-10 offset-1 row">
             <p class="text-start p-0 ms-3 fw-bold mt-5">SEPETİM</p>
             <div class="col-8 p-0 px-3">
-                <cart-page-items/>
+                <cart-page-items :items="items" />
                 <hr />
-               <cart-page-discounts/>
+                <cart-page-discounts />
             </div>
-            <cart-page-total/>
+            <cart-page-total :items="items" />
         </div>
     </section>
 </template>
@@ -16,8 +16,43 @@
 import CartPageItems from "../components/CartPage/cartPageItems.vue";
 import CartPageDiscounts from "../components/CartPage/cartPageDiscounts.vue";
 import CartPageTotal from "../components/CartPage/cartPageTotal.vue";
-export default{
-    components: { CartPageItems, CartPageDiscounts, CartPageTotal }
+export default {
+    components: { CartPageItems, CartPageDiscounts, CartPageTotal },
+
+    data() {
+        return {
+            items: [
+                {
+                    content: {
+                        id: 1,
+                        description: "Vizon Kapüşonlu Büzgü Detaylı Pardösü",
+                        count: 1,
+                        size: "M",
+                        color: "Vizon",
+                        colorCode:"#414744",
+                        price: 2299.0,
+                    },
+                    image:
+                        "https://img-network.mncdn.com/productimages/2400406202424_1_100_154.jpg",
+                },
+                {
+                    content: {
+                        id: 2,
+                        description: "Vizon Kapüşonlu Büzgü Detaylı Pardösü",
+                        count: 1,
+                        size: "M",
+                        color: "Vizon",
+                        colorCode:"#414744",
+                        price: 2399.0,
+                    },
+                    image:
+                        "https://img-network.mncdn.com/productimages/2400406202424_1_100_154.jpg",
+                },
+            ],
+            
+        }
+    },
+    
 }
 </script>
 

@@ -4,10 +4,11 @@
       <h4>{{ title }}</h4>
     </div>
     <Carousel class="custom-container mt-2" :settings="settings" :breakpoints="breakpoints">
-      <Slide v-for="slide in 100" :key="slide">
+      <Slide v-for="item in items" :key="item.id">
         <item
           :style="{ width: itemCarouselsettings.itemWidth }"
           @click="goToItemPage()"
+          :item="item"
           class="pointer"
         />
       </Slide>
@@ -50,6 +51,10 @@ export default defineComponent({
       type: String,
       default: '',
     },
+    items: {
+      type: Array,
+      default: () => ([])
+    }
   },
   data: (instance) => ({
     // carousel settings

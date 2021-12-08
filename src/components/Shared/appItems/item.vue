@@ -1,16 +1,29 @@
 <template>
  <div>
-  <img src="https://img-network.mncdn.com/productimages/2400405890424_1.jpg" class="card-img-top custom-card-img" alt="...">
+  <img :src="item.url" class="card-img-top custom-card-img" alt="...">
   <div class="text-start" >
-    <h5 class="card-title">Slim Fit Camel Jean Pantolon</h5>
-    <p class="card-text">1.999,00 ₺</p>
+    <h5 class="card-title">{{item.title}}</h5>
+    <p class="card-text">{{item.price}} ₺</p>
   </div>
 </div>
 </template>
 
 <script>
 export default {
-    
+    props:{
+      item:{
+        type:Object,
+        default:() =>({
+          id:0,
+          url:"",
+          title:"",
+          price:""
+        })
+      }
+    },
+    data(){
+
+    }
 }
 </script>
 

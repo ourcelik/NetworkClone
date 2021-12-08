@@ -2,7 +2,7 @@
     <section class="header-margin custom-container">
         <app-breadcrumb />
         <div class="row">
-            <div class="col-8  text-center">
+            <div class="col-8 text-center">
                 <item-detail-photo-list :photoList="item.photos" />
             </div>
             <div class="col-4 text-center">
@@ -10,11 +10,13 @@
             </div>
         </div>
     </section>
-        <item-carousel :itemCarouselsettings="itemCarouselSettings" :title="'İlginizi Çekebilecek Ürünler'"/>
-        <item-carousel :itemCarouselsettings="itemCarouselSettings" :title="'Görünümü Tamamla'"/>
-        <item-carousel :itemCarouselsettings="itemCarouselSettings" :title="'Son Gezilenler'"/>
-
-
+    <item-carousel
+        :itemCarouselsettings="itemCarouselSettings"
+        :title="'İlginizi Çekebilecek Ürünler'"
+        :items="carouselItemsInterest"
+    />
+    <item-carousel :itemCarouselsettings="itemCarouselSettings" :title="'Görünümü Tamamla'" :items="carouselItemsComplete" />
+    <item-carousel :itemCarouselsettings="itemCarouselSettings" :title="'Son Gezilenler'" :items="carouselItemsLastTravels" />
 </template>
 
 <script>
@@ -23,14 +25,14 @@ import ItemDetailPhotoList from "../components/ItemDetailPage/ItemDetailPhotoLis
 import ItemDetailContent from "../components/ItemDetailPage/ItemDetailContent.vue";
 import ItemCarousel from "../components/HomePage/itemCarousel.vue";
 export default {
-    components: { AppBreadcrumb, ItemDetailPhotoList, ItemDetailContent,  ItemCarousel },
+    components: { AppBreadcrumb, ItemDetailPhotoList, ItemDetailContent, ItemCarousel },
 
     data() {
         return {
             item: {
                 content: {
                     id: 1,
-                    type:"NETWORK Smart Casual",
+                    type: "NETWORK Smart Casual",
                     name: "Slim Fit Haki Jean Pantolon",
                     price: 799.00,
                     colorOptions: [
@@ -77,8 +79,83 @@ export default {
                 tablet: 3,
                 desktop: 4,
                 buttonVisible: false
+            },
+            carouselItemsInterest: [{
+                id: 1,
+                title: "Slim Fit Haki Jean Pantolon",
+                price: 799.00,
+                url: "https://img-network.mncdn.com/mnresize/336/517/productimages/2400406323815_1.jpg",
+            },
+            {
+                id: 2,
+                title: "Slim Fit Haki Jean Pantolon",
+                price: 799.00,
+                url:"https://img-network.mncdn.com/mnresize/336/517/productimages/2400405864623_1.jpg"
+            },
+            {
+                id: 3,
+                title: "Slim Fit Haki Jean Pantolon",
+                price: 799.00,
+                url: "https://img-network.mncdn.com/mnresize/336/517/productimages/2400406323815_1.jpg",
+            },
+            {
+                id: 4,
+                title: "Slim Fit Haki Jean Pantolon",
+                price: 799.00,
+                url:"https://img-network.mncdn.com/mnresize/336/517/productimages/2400405864623_1.jpg"
             }
-            
+            ],
+            carouselItemsComplete: [{
+                id: 1,
+                title: "Slim Fit Haki Jean Pantolon",
+                price: 799.00,
+                url: "https://img-network.mncdn.com/mnresize/336/517/productimages/2400406323815_1.jpg",
+            },
+            {
+                id: 2,
+                title: "Slim Fit Haki Jean Pantolon",
+                price: 799.00,
+                url:"https://img-network.mncdn.com/mnresize/336/517/productimages/2400405864623_1.jpg"
+            },
+            {
+                id: 3,
+                title: "Slim Fit Haki Jean Pantolon",
+                price: 799.00,
+                url: "https://img-network.mncdn.com/mnresize/336/517/productimages/2400406323815_1.jpg",
+            },
+            {
+                id: 4,
+                title: "Slim Fit Haki Jean Pantolon",
+                price: 799.00,
+                url:"https://img-network.mncdn.com/mnresize/336/517/productimages/2400405864623_1.jpg"
+            }
+            ],
+            carouselItemsLastTravels: [{
+                id: 1,
+                title: "Slim Fit Haki Jean Pantolon",
+                price: 799.00,
+                url: "https://img-network.mncdn.com/mnresize/336/517/productimages/2400406323815_1.jpg",
+            },
+            {
+                id: 2,
+                title: "Slim Fit Haki Jean Pantolon",
+                price: 799.00,
+                url:"https://img-network.mncdn.com/mnresize/336/517/productimages/2400405864623_1.jpg"
+            },
+            {
+                id: 3,
+                title: "Slim Fit Haki Jean Pantolon",
+                price: 799.00,
+                url: "https://img-network.mncdn.com/mnresize/336/517/productimages/2400406323815_1.jpg",
+            },
+            {
+                id: 4,
+                title: "Slim Fit Haki Jean Pantolon",
+                price: 799.00,
+                url:"https://img-network.mncdn.com/mnresize/336/517/productimages/2400405864623_1.jpg"
+            }
+            ]
+
         }
     },
 }

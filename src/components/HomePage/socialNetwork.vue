@@ -34,11 +34,11 @@
   </div>
   <div class="mt-5">
     <Carousel  :wrap-around="true" :settings="settings" :breakpoints="breakpoints" :autoplay="3500">
-      <Slide  v-for="slide in 10" :key="slide">
+      <Slide  v-for="item in socialItems" :key="item.id">
         <div class="img_wrap">
           <img
           class="pointer social-image"
-          src="https://buysocial.s3.eu-west-1.amazonaws.com/images/513/20211020_dRLIMe7LIeTA.jpg"
+          :src="item.url"
           alt=""
           id="socialImage"
         />
@@ -74,6 +74,12 @@ import { Carousel, Navigation, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
 export default defineComponent({
+  props:{
+    socialItems:{
+      type:Array,
+      default: () => ([])
+    }
+  },
   name: "WrapAround",
   components: {
     Carousel,

@@ -9,50 +9,26 @@
   >
     <div class="carousel-indicators m-0">
       <button
+      v-for="index in items.length" :key="index"
         type="button"
         data-bs-target="#carouselExampleIndicators"
-        data-bs-slide-to="0"
-        class="active mx-2"
+        :data-bs-slide-to="index - 1"
+        class="mx-2"
         aria-current="true"
-        aria-label="Slide 1"
+        :aria-label="Slide  + index"
+        :ref="'slide_' + index"
       ></button>
-      <button
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide-to="1"
-        class="mx-2"
-        aria-label="Slide 2"
-      ></button>
-      <button
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide-to="2"
-        class="mx-2"
-        aria-label="Slide 3"
-      ></button>
+      
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active">
+      <div :ref="'item_' + item.id" class="carousel-item" v-for="item in items" :key="item.id">
         <img
-          src="https://img-network.mncdn.com/bannerimages/N_SLIDER_2021102205460888284.jpg"
+          :src="item.url"
           class="d-block w-100"
           alt="..."
         />
       </div>
-      <div class="carousel-item">
-        <img
-          src="https://img-network.mncdn.com/bannerimages/N_SLIDER_2021102207002572810.jpg"
-          class="d-block w-100"
-          alt="..."
-        />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="https://img-network.mncdn.com/bannerimages/sweatshirt-slider_2021101310514728567.jpg"
-          class="d-block w-100"
-          alt="..."
-        />
-      </div>
+     
     </div>
     <button
       class="carousel-control-prev"
@@ -76,7 +52,22 @@
 </template>
 
 <script>
-export default {};
+export default {
+
+  props: {
+    items: {
+      type: Array,
+      required: true,
+      default: () => []
+    }
+  },
+  mounted() {
+    this.$refs.item_1.classList.add('active');
+    this.$refs.slide_1.classList.add('active');
+  },
+  
+
+};
 </script>
 
 <style>

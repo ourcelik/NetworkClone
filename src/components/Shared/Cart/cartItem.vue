@@ -8,8 +8,8 @@
         item.content.description
       }}</span>
       <span class="font-xsmall mt-2">Adet: {{ item.content.count }}</span>
-      <span class="font-xsmall mt-2">Adet: {{ item.content.size }}</span>
-      <span class="font-xsmall mt-2">Adet: {{ item.content.color }}</span>
+      <span class="font-xsmall mt-2">Beden: {{ item.content.size }}</span>
+      <span class="font-xsmall mt-2">Renk: {{ item.content.color }}</span>
     </div>
     <div class="d-flex flex-column justify-content-between mx-3">
       <p class="fw-bold">2.299.00 TL</p>

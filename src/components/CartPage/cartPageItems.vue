@@ -4,7 +4,7 @@
                     <span class="fw-bold font-little-small p-2">Adet</span>
                     <span class="fw-bold font-little-small p-2 me-4">Fiyat</span>
                 </div>
-                <div class="d-flex justify-content-between p-0 mt-3">
+                <div class="d-flex justify-content-between p-0 mt-3"  v-for="item in items" :key="item.id">
                     <div>
                         <img
                             class="img-fluid m-0 border border-1 border-gray-light p-05"
@@ -13,18 +13,18 @@
                     </div>
                     <div class="flex-grow-1 d-flex row">
                         <div class="col-4 text-start mx-2">
-                            <p class="fw-bold font-title mt-1">Geniş Fit Indigo mont</p>
+                            <p class="fw-bold font-title mt-1">{{item.content.description}}</p>
                             <p class="font-little-small mt-1 c-gray">
                                 Renk:
                                 <span
                                     class="w-50 h-50 item-color mx-1 pointer"
-                                    style="background-color: bisque;"
+                                    :style="{backgroundColor: item.content.colorCode}"
                                 ></span>
-                                <span class="c-black">Trrek</span>
+                                <span class="c-black">{{item.content.color}}</span>
                             </p>
                             <p class="font-little-small mt-1 c-gray">
                                 Beden:
-                                <span class="fw-bold">L</span>
+                                <span class="fw-bold">{{item.content.size}}</span>
                             </p>
                         </div>
                         <div class="col-3 mx-4 my-1">
@@ -36,14 +36,14 @@
                                 <button
                                     type="button"
                                     class="btn bg-white rounded-0 context-menu fw-bold border border-top-1 border-bottom-1 triple-button c-black c-black-hover"
-                                >6</button>
+                                >{{item.content.count}}</button>
                                 <button
                                     type="button"
                                     class="btn bg-white rounded-0 border border-1 triple-button fs-4"
                                 >+</button>
                             </div>
                         </div>
-                        <div class="col-2 offset-1 fw-bold">2,700.00 ₺</div>
+                        <div class="col-2 offset-1 fw-bold">{{item.content.price}} ₺</div>
                         <div class="d-flex justify-content-start">
                             <div class="d-flex justify-content-around align-items-center">
                                 <img
@@ -74,3 +74,14 @@
         
 
 </template>
+
+<script>
+export default {
+    props: {
+        items: {
+            type: Array,
+            required: true
+        }
+    },
+}
+</script>

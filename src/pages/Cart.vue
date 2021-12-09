@@ -7,6 +7,7 @@
                 <hr />
                 <cart-page-discounts />
             </div>
+
             <cart-page-total :items="items" />
         </div>
     </section>
@@ -19,40 +20,15 @@ import CartPageTotal from "../components/CartPage/cartPageTotal.vue";
 export default {
     components: { CartPageItems, CartPageDiscounts, CartPageTotal },
 
-    data() {
-        return {
-            items: [
-                {
-                    content: {
-                        id: 1,
-                        description: "Vizon Kapüşonlu Büzgü Detaylı Pardösü",
-                        count: 1,
-                        size: "M",
-                        color: "Vizon",
-                        colorCode:"#414744",
-                        price: 2299.0,
-                    },
-                    image:
-                        "https://img-network.mncdn.com/productimages/2400406202424_1_100_154.jpg",
-                },
-                {
-                    content: {
-                        id: 2,
-                        description: "Vizon Kapüşonlu Büzgü Detaylı Pardösü",
-                        count: 1,
-                        size: "M",
-                        color: "Vizon",
-                        colorCode:"#414744",
-                        price: 2399.0,
-                    },
-                    image:
-                        "https://img-network.mncdn.com/productimages/2400406202424_1_100_154.jpg",
-                },
-            ],
-            
-        }
+    created() {
+        this.$store.dispatch("fetchCart");
     },
-    
+  
+    computed: {
+        items() {
+            return this.$store.state.cart.items;
+        },
+    }
 }
 </script>
 
@@ -60,7 +36,7 @@ export default {
 .custom-cart {
     margin-top: 150px;
 }
-.item-color {
+.cart-item-color {
     border-radius: 50%;
     border: 1px solid black;
     padding: 2px 9px;

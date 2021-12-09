@@ -4,10 +4,10 @@
                 <p class="mx-3 fs-6">
                   TOPLAM <span class="font-xsmall">(KDV Dahil)</span>
                 </p>
-                <p class="fw-bold mx-3 fs-5">{{totalPrice}} TL</p>
+                <p class="fw-bold mx-3 fs-5">{{finalPrice}} TL</p>
               </div>
               <div>
-                <button class="custom-button-cart mx-2 col-11">
+                <button @click="goToCart"  class="custom-button-cart mx-2 col-11" data-bs-dismiss="modal">
                   SEPETE GİT
                 </button>
               </div>
@@ -16,6 +16,15 @@
 
 <script>
 export default {
-    props:["totalPrice"]
+    computed: {
+         finalPrice(){
+          return this.$store.getters.finalCartPrice;
+      },
+    },
+    methods: {
+      goToCart(){
+        this.$router.push({name: 'CartPage'});
+      }
+    },
 }
 </script>

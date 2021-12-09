@@ -39,32 +39,21 @@
 
 <script>
 export default{
-    props:{
-        items:{
-            type:Array,
-            required:true
-        },
-        
-    },
+    
     computed:{
         totalPrice(){
-            let totalPrice = 0;
-            this.items.forEach(item => {
-                totalPrice += item.content.price * item.content.count;
-            });
-            return totalPrice;
+            return this.$store.getters.totalCartPrice;
         },
         discount(){
-            let discount = 150;
-            return discount;
+            return this.$store.getters.discountCartPrice;
         },
         shipping(){
-            let shipping = 20;
-            return shipping;
+            return this.$store.getters.shippingCartPrice;
         },
         lastPrice(){
-            let lastPrice = this.totalPrice - this.discount + this.shipping;
-            return lastPrice;
+            
+            return this.$store.getters.finalCartPrice;
+            
         }
     }
 }

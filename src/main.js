@@ -11,7 +11,7 @@ library.add(far);
 library.add(fab);
 library.add(fas);
 import  './assets/style.css';
-
+import store from './store';
 
 
 
@@ -21,5 +21,6 @@ import { dom } from "@fortawesome/fontawesome-svg-core";
 import router from './router';
 dom.watch();
 const app =  createApp(App)
+app.use(store);
 app.use(router);
 app.mount('#app')

@@ -8,7 +8,7 @@
                     <div>
                         <img
                             class="img-fluid m-0 border border-1 border-gray-light p-05"
-                            src="https://img-network.mncdn.com/productimages/2400406288053_1_100_154.jpg"
+                            :src="item.image"
                         />
                     </div>
                     <div class="flex-grow-1 d-flex row">
@@ -17,7 +17,7 @@
                             <p class="font-little-small mt-1 c-gray">
                                 Renk:
                                 <span
-                                    class="w-50 h-50 item-color mx-1 pointer"
+                                    class="w-50 h-50 cart-item-color mx-1 pointer"
                                     :style="{backgroundColor: item.content.colorCode}"
                                 ></span>
                                 <span class="c-black">{{item.content.color}}</span>
@@ -43,7 +43,7 @@
                                 >+</button>
                             </div>
                         </div>
-                        <div class="col-2 offset-1 fw-bold">{{item.content.price}} ₺</div>
+                        <div class="col-2 offset-1 fw-bold">{{item.content.totalPrice}} ₺</div>
                         <div class="d-flex justify-content-start">
                             <div class="d-flex justify-content-around align-items-center">
                                 <img
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div @click="removeItem(item)">
                         <img src="../../assets/images/trash2.png" width="25" class="pointer" />
                     </div>
                 </div>
@@ -81,6 +81,11 @@ export default {
         items: {
             type: Array,
             required: true
+        }
+    },
+    methods: {
+        removeItem(item) {
+            this.$store.dispatch('removeFromCart', item);
         }
     },
 }

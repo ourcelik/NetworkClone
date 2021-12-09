@@ -14,6 +14,7 @@
             <img src="../../../assets/images/cart.png" class="mx-2" alt="" srcset="">
             <h5 class="ls-1 mt-2">Sepetim</h5>
             <button
+              ref="close"
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
@@ -29,13 +30,12 @@
             <div>
               <cart-item
                 v-for="(item, index) in items"
-                @remove-item="removeItem($event)"
                 :key="index"
                 :item="item"
                 class="mt-2"
               />
             </div>
-            <cart-button :totalPrice="totalPrice"/>
+            <cart-button/>
           </div>
           <blank-cart v-else />
         </div>
@@ -55,50 +55,16 @@ export default {
     CartItem,
     CartButton
   },
-  data() {
-    return {
-      items: [
-        {
-          content: {
-            id: 1,
-            description: "Vizon Kapüşonlu Büzgü Detaylı Pardösü",
-            count: 1,
-            size: "M",
-            color: "Vizon",
-            price: 2299.0,
-          },
-          image:
-            "https://img-network.mncdn.com/productimages/2400406202424_1_100_154.jpg",
-        },
-        {
-          content: {
-            id: 2,
-            description: "Vizon Kapüşonlu Büzgü Detaylı Pardösü",
-            count: 1,
-            size: "M",
-            color: "Vizon",
-            price: 2399.0,
-          },
-          image:
-            "https://img-network.mncdn.com/productimages/2400406202424_1_100_154.jpg",
-        },
-      ],
-    };
+  created() {
+    this.$store.dispatch("fetchCart");
   },
-  methods:{
-      removeItem(id)
-      {
-          this.items = this.items.filter(i=>i.content.id != id);
-      }
-  },
+  
+  
   computed:{
-      totalPrice(){
-          let totalPrice = 0;
-          this.items.forEach(item =>{
-              totalPrice += item.content.price;
-          });
-          return totalPrice;
-      }
+     
+      items() {
+            return this.$store.state.cart.items;
+        },
   }
 };
 </script>

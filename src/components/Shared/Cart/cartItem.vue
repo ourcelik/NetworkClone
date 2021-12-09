@@ -12,8 +12,8 @@
       <span class="font-xsmall mt-2">Renk: {{ item.content.color }}</span>
     </div>
     <div class="d-flex flex-column justify-content-between mx-3">
-      <p class="fw-bold">2.299.00 TL</p>
-      <div class="align-self-end pointer" @click="removeItem(item.content.id)">
+      <p class="fw-bold">{{item.content.totalPrice}} ₺</p>
+      <div class="align-self-end pointer" @click="removeItem(item)">
       <img src="../../../assets/images/trash.png" class="align-self-end" alt="" srcset="">
     
       </div>
@@ -29,10 +29,10 @@ export default {
     return {};
   },
   methods: {
-      removeItem(id)
+       removeItem(item)
       {
-        this.$emit("removeItem",id);
-      }
+          this.$store.dispatch("removeFromCart", item);
+      },
   },
 };
 </script>

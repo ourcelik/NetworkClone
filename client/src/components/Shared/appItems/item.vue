@@ -1,8 +1,8 @@
 <template>
  <div>
-  <img :src="item.url" class="card-img-top custom-card-img" alt="...">
+  <img :src="item.topPhoto" class="card-img-top custom-card-img" alt="...">
   <div class="text-start" >
-    <h5 class="card-title">{{item.title}}</h5>
+    <h5 class="card-title">{{item.name}}</h5>
     <p class="card-text">{{item.price}} ₺</p>
   </div>
 </div>

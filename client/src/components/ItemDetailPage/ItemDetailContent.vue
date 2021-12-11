@@ -32,7 +32,8 @@
             <hr />
         </div>
         <div id="cart-add" class="align-self-stretch row align-items-center mt-4">
-            <button @click="addToCart()" class="custom-button-cart mx-2 col-9">SEPETE EKLE</button>
+            <button @click="addToCart()"  data-bs-toggle="modal"
+                    data-bs-target="#cartModal" class="custom-button-cart mx-2 col-9">SEPETE EKLE</button>
             <div class="col-1 mx-2 ">
                 <img src="../../assets/images/heart2.png" class="pointer heart-custom" alt="">
             </div>

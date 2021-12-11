@@ -1,21 +1,33 @@
 import { createStore} from 'vuex';
-import { dummyItems } from './dummy';
 import {getCart,addToCart,removeFromCart} from '../services/cartService';
-
+import { getItemsSummary,getItem } from '../services/itemService';
 
 export default createStore({
     state:{
-        items:[],
+        attractiveItems:[],
+        CompleteOutfit:[],
+        lastViewedItems:[],
+        homeItems:[],
         cart:{
             items:[],
             total:0,
             shipping:0,
             discount:0,
-        }
+        },
+        item:null
     },
     mutations:{
-        setItems(state,items){
-            state.items = items;
+        setItemsForHome(state,items){
+            state.homeItems = items;
+        },
+        setItemsForAttractive(state,items){
+            state.attractiveItems = items;
+        },
+        setItemsForCompleteOutfit(state,items){
+            state.CompleteOutfit = items;
+        },
+        setItemsForLastViewed(state,items){
+            state.lastViewedItems = items;
         },
         setCart(state,cart){
             state.cart = cart;
@@ -54,16 +66,35 @@ export default createStore({
             state.cart.discount = 0;
             state.cart.shipping = 0;
 
+        },
+        setItem(state,item){
+            state.item = item;
         }
     },
     actions:{
-        fetchItems(context){
-            //burada veriyi cekecez
-                context.commit('setItems',dummyItems);
+        fetchItemsForHome(context){
+            getItemsSummary().then(res => {
+                context.commit('setItemsForHome',res.data);
+            });
+        },
+        fetchItemsForAttractiveItems(context){
+            getItemsSummary().then(res => {
+                context.commit('setItemsForAttractive',res.data);
+            });
+        },
+        fetchItemsForCompleteOutfit(context){
+            getItemsSummary().then(res => {
+                context.commit('setItemsForCompleteOutfit',res.data);
+            });
+        },
+        fetchItemsForLastViewedItems(context){
+            getItemsSummary().then(res => {
+                context.commit('setItemsForLastViewed',res.data);
+            });
         },
         fetchCart(context){
-            getCart().then(cart => {
-                context.commit('setCart',cart.data);
+            getCart().then(res => {
+                context.commit('setCart',res.data);
             });
         },
         addToCart(context,item){
@@ -79,6 +110,11 @@ export default createStore({
         },
         resetCart(context){
             context.commit('resetCart');
+        },
+        fetchItem(context,id){
+            getItem(id).then(res => {
+                context.commit('setItem',res.data);
+            });
         }
         
     },

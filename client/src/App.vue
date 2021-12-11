@@ -1,6 +1,8 @@
 <template>
     <app-header/>
+    <transition>
     <router-view/>
+    </transition>
     <app-cart/>
     <app-footer/>
 </template>

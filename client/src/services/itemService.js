@@ -1,15 +1,9 @@
-import { inject } from "vue";
-
-const appAxios = inject("appAxios");
+import { appAxios } from "../utils/appAxios";
 
 export async function getItem(id) {
-  const response = await appAxios.get(`/api/items/${id}`);
-  const item = await response.json();
-  return item;
+  return appAxios.get(`items/${id}`);
 }
 
-export async function getItems() {
-  const response = await appAxios.get("/api/items");
-  const items = await response.json();
-  return items;
+export async function getItemsSummary() {
+  return appAxios.get("items/summary");
 }

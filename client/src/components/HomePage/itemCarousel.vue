@@ -7,7 +7,7 @@
       <Slide v-for="item in items" :key="item.id">
         <item
           :style="{ width: itemCarouselsettings.itemWidth }"
-          @click="goToItemPage()"
+          @click="goToItemPage(item.id)"
           :item="item"
           class="pointer"
         />
@@ -78,8 +78,9 @@ export default defineComponent({
     },
   }),
   methods: {
-    goToItemPage() {
-      this.$router.push({ name: 'ItemDetailPage' });
+    goToItemPage(id) {
+      this.$store.dispatch('fetchItem', id);
+      this.$router.push({ name: 'ItemDetailPage',params: { id: id } });
     }
   }
 });

@@ -19,7 +19,9 @@ export default {
         SocialNetwork,
         ItemCarousel
     },
-
+    created() {
+        this.$store.dispatch('fetchItemsForHome');
+    },
     data() {
         return {
             carouselImages:[
@@ -28,18 +30,7 @@ export default {
                 {id:3,url:'https://img-network.mncdn.com/bannerimages/N_SLIDER_2021120605430860925.jpg'},
                 {id:4,url:'https://img-network.mncdn.com/bannerimages/N_SLIDER_2021102207002572810.jpg'},
             ],
-            items:[
-                {id:1,url:'https://img-network.mncdn.com/productimages/2400405890424_1.jpg',title:'Slim Fit Camel Jean Pantolon',price:'1.999,00'},
-                {id:2,url:'https://img-network.mncdn.com/productimages/2400405890424_1.jpg',title:'Slim Fit Camel Jean Pantolon',price:'1.999,00'},
-                {id:3,url:'https://img-network.mncdn.com/productimages/2400405890424_1.jpg',title:'Slim Fit Camel Jean Pantolon',price:'1.999,00'},
-                {id:4,url:'https://img-network.mncdn.com/productimages/2400405890424_1.jpg',title:'Slim Fit Camel Jean Pantolon',price:'1.999,00'},
-                {id:5,url:'https://img-network.mncdn.com/productimages/2400405890424_1.jpg',title:'Slim Fit Camel Jean Pantolon',price:'1.999,00'},
-                {id:6,url:'https://img-network.mncdn.com/productimages/2400405890424_1.jpg',title:'Slim Fit Camel Jean Pantolon',price:'1.999,00'},
-                {id:7,url:'https://img-network.mncdn.com/productimages/2400405890424_1.jpg',title:'Slim Fit Camel Jean Pantolon',price:'1.999,00'},
-                {id:8,url:'https://img-network.mncdn.com/productimages/2400405890424_1.jpg',title:'Slim Fit Camel Jean Pantolon',price:'1.999,00'},
-                {id:9,url:'https://img-network.mncdn.com/productimages/2400405890424_1.jpg',title:'Slim Fit Camel Jean Pantolon',price:'1.999,00'},
-                {id:10,url:'https://img-network.mncdn.com/productimages/2400405890424_1.jpg',title:'Slim Fit Camel Jean Pantolon',price:'1.999,00'}
-            ],
+            
             socialItems:[
                 {id:1,url:'https://buysocial.s3.eu-west-1.amazonaws.com/images/513/20211020_dRLIMe7LIeTA.jpg'},
                 {id:2,url:'https://buysocial.s3.eu-west-1.amazonaws.com/images/513/20211020_dRLIMe7LIeTA.jpg'},
@@ -54,6 +45,11 @@ export default {
             ]
         }
     },
+    computed:{
+        items(){
+            return this.$store.state.homeItems;
+        }
+    }
 }
 
 </script>

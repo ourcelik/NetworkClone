@@ -18,7 +18,7 @@ const routes = [
     },
     {
         name:"ItemDetailPage",
-        path:"/itemdetail",
+        path:"/itemdetail/:id",
         component:()=> import("@/pages/ItemDetail")
     },
     {
@@ -30,9 +30,10 @@ const routes = [
 
 const router = createRouter({
     routes,
+   
     history: createWebHistory()
 });
 router.afterEach(() =>{
-    window.scrollTo(0,0);
+    window.scrollTo({behavior:"smooth",top:0});
 })
 export default router;

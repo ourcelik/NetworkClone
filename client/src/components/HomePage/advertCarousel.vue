@@ -64,7 +64,8 @@ export default {
   mounted() {
     this.$refs.item_1.classList.add('active');
     this.$refs.slide_1.classList.add('active');
-  },
+   
+},
   
 
 };

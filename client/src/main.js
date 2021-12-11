@@ -12,7 +12,7 @@ library.add(fab);
 library.add(fas);
 import  './assets/style.css';
 import store from './store';
-
+import { appAxios } from './utils/appAxios';
 
 
 
@@ -23,4 +23,7 @@ dom.watch();
 const app =  createApp(App)
 app.use(store);
 app.use(router);
+
+app.config.globalProperties.$appAxios = appAxios;
+app.provide('appAxios', appAxios);
 app.mount('#app')

@@ -1,5 +1,8 @@
 import { createStore} from 'vuex';
-import { dummyItems,dummyCart } from './dummy';
+import { dummyItems } from './dummy';
+import {getCart,addToCart,removeFromCart} from '../services/cartService';
+
+
 export default createStore({
     state:{
         items:[],
@@ -18,6 +21,7 @@ export default createStore({
             state.cart = cart;
         },
         addToCart(state,item){
+            console.log(item);
             let cartItem = state.cart.items.find(cartItem => cartItem.content.id === item.content.id);
             if(cartItem){
                 cartItem.content.count++;
@@ -58,15 +62,20 @@ export default createStore({
                 context.commit('setItems',dummyItems);
         },
         fetchCart(context){
-            //burada veriyi cekecez
-                context.commit('setCart',dummyCart);
+            getCart().then(cart => {
+                context.commit('setCart',cart.data);
+            });
         },
         addToCart(context,item){
-            console.log(item);
-            context.commit('addToCart',item);
+            addToCart(item).then(() => {
+                context.commit('addToCart',item);
+            });
         },
         removeFromCart(context,item){
-            context.commit('removeFromCart',item);
+            removeFromCart(item.content.id).then(() => {
+                context.commit('removeFromCart',item);
+            });
+            
         },
         resetCart(context){
             context.commit('resetCart');

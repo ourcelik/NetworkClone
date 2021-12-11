@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex justify-content-between">
     <div>
-      <img class="img-fluid w-60" :src="item.image" alt="" />
+      <img class="img-fluid w-60" :src="item.image"  alt="" />
     </div>
     <div class="d-flex flex-column align-items-start">
       <span class="font-small fw-bold" id="title">{{

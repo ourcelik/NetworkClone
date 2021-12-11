@@ -6,7 +6,7 @@
                 <item-detail-photo-list :photoList="item.photos" />
             </div>
             <div class="col-4 text-center">
-                <item-detail-content :itemDetails="item.content" />
+                <item-detail-content :itemDetails="item" />
             </div>
         </div>
     </section>
@@ -31,7 +31,7 @@ export default {
         return {
             item: {
                 content: {
-                    id: 1,
+                    id: 2,
                     type: "NETWORK Smart Casual",
                     name: "Slim Fit Haki Jean Pantolon",
                     price: 799.00,
@@ -65,7 +65,9 @@ export default {
                     },
 
                 },
-                photos: ["https://img-network.mncdn.com/mnresize/491/754/productimages/2400405890677_1.jpg",
+                cartImage : "https://img-network.mncdn.com/productimages/2400405864623_1_100_154.jpg",
+                photos: [
+                "https://img-network.mncdn.com/mnresize/491/754/productimages/2400405890677_1.jpg",
                     "https://img-network.mncdn.com/mnresize/491/754/productimages/2400405890677_2.jpg",
                     "https://img-network.mncdn.com/mnresize/491/754/productimages/2400405890677_3.jpg",
                     "https://img-network.mncdn.com/mnresize/491/754/productimages/2400405890677_4.jpg",

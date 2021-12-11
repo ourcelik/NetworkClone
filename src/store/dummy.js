@@ -28,10 +28,11 @@ const items =  [
 ]
 
 const cart = {
+    id: 1,
     items: [
         {
             content: {
-                id: 2,
+                id: 1,
                 description: "Vizon Kapüşonlu Büzgü Detaylı Pardösü",
                 count: 2,
                 size: "M",

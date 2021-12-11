@@ -18,22 +18,21 @@ export default createStore({
             state.cart = cart;
         },
         addToCart(state,item){
-            let cartItem = state.cart.items.find(cartItem => cartItem.id === item.id);
+            let cartItem = state.cart.items.find(cartItem => cartItem.content.id === item.content.id);
             if(cartItem){
-                cartItem.count++;
-                cartItem.totalPrice = cartItem.count * cartItem.price;
+                cartItem.content.count++;
+                cartItem.content.totalPrice = cartItem.content.count * cartItem.content.price;
             }else{
                 state.cart.items.push(item);
             }
-            state.cart.total += item.price;
+            state.cart.total += item.content.price;
         },
         removeFromCart(state,item){
-            let cartItem = state.cart.items.find(cartItem => cartItem.id === item.id);
+            let cartItem = state.cart.items.find(cartItem => cartItem.content.id === item.content.id);
             if(cartItem){
                 if(cartItem.content.count > 1){
                     cartItem.content.count--;
                     cartItem.content.totalPrice = cartItem.content.count * cartItem.content.price;
-                    console.log(cartItem.content.totalPrice);
                 }else{
                     state.cart.items.splice(state.cart.items.indexOf(cartItem),1);
                 }
@@ -63,6 +62,7 @@ export default createStore({
                 context.commit('setCart',dummyCart);
         },
         addToCart(context,item){
+            console.log(item);
             context.commit('addToCart',item);
         },
         removeFromCart(context,item){
@@ -89,5 +89,7 @@ export default createStore({
         
     },
 });
+
+
 
   

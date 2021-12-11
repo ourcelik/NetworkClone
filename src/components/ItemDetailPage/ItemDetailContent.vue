@@ -1,13 +1,14 @@
 <template>
     <div class="d-flex flex-column justify-content-start align-items-start mt-3 ">
-        <h5 class="font-small">{{ itemDetails.type }}</h5>
-        <h4 class="fw-bold">{{ itemDetails.name }}</h4>
-        <p class="fw-bold">{{ itemDetails.price }} TL</p>
+        <h5 class="font-small">{{ itemDetails.content.type }}</h5>
+        <h4 class="fw-bold">{{ itemDetails.content.name }}</h4>
+        <p class="fw-bold">{{ itemDetails.content.price }} TL</p>
         <div class="d-flex justify-content-start h-50 align-items-center">
             <span
                 @mouseover="changeCurrentOver(item.name)"
+                @click="getCurrentColorObject(item)"
                 class="w-100 item-color mx-1 pointer"
-                v-for="(item, index) in itemDetails.colorOptions"
+                v-for="(item, index) in itemDetails.content.colorOptions"
                 :style="{ backgroundColor: item.color }"
                 :key="index"
             ></span>
@@ -23,7 +24,7 @@
                 <span
                     class="fw-bold font-small pointer custom-body-size"
                     :class="{'bg-black': item === currentSize,'c-white': item === currentSize}"
-                    v-for="(item, index) in itemDetails.sizes"
+                    v-for="(item, index) in itemDetails.content.sizes"
                     :key="index"
                     @click="changeCurrentSize(item)"
                 >{{ item }}</span>
@@ -31,7 +32,7 @@
             <hr />
         </div>
         <div id="cart-add" class="align-self-stretch row align-items-center mt-4">
-            <button class="custom-button-cart mx-2 col-9">SEPETE EKLE</button>
+            <button @click="addToCart()" class="custom-button-cart mx-2 col-9">SEPETE EKLE</button>
             <div class="col-1 mx-2 ">
                 <img src="../../assets/images/heart2.png" class="pointer heart-custom" alt="">
             </div>
@@ -55,22 +56,22 @@
                         aria-labelledby="panelsStayOpen-headingOne"
                     >
                         <div class="accordion-body text-start">
-                            <p class="font-small fw-bold">Ref. No: {{ itemDetails.details.refNo }}</p>
+                            <p class="font-small fw-bold">Ref. No: {{ itemDetails.content.details.refNo }}</p>
                             <ul>
                                 <li
                                     class="mb-3 c-gray"
-                                    v-for="(item, index) in itemDetails.details.content"
+                                    v-for="(item, index) in itemDetails.content.details.content"
                                     :key="index"
                                 >{{ item }}</li>
                             </ul>
                             <p class="c-gray">
                                 Manken Bilgileri :
-                                 Boy: {{itemDetails.details.model.boy}} / Göğüs: {{itemDetails.details.model.gogus}} / Bel: {{itemDetails.details.model.bel}} / Kalça: {{itemDetails.details.model.kalca}} / Ayak Numarası: {{itemDetails.details.model.ayak_Numarası}}
+                                 Boy: {{itemDetails.content.details.model.boy}} / Göğüs: {{itemDetails.content.details.model.gogus}} / Bel: {{itemDetails.content.details.model.bel}} / Kalça: {{itemDetails.content.details.model.kalca}} / Ayak Numarası: {{itemDetails.content.details.model.ayak_Numarası}}
                                   
                                  
                             </p>
                             <p class="c-gray">
-                                Numune Bedeni:{{itemDetails.details.sample_size}}
+                                Numune Bedeni:{{itemDetails.content.details.sample_size}}
                             </p>
 
                         </div>
@@ -123,6 +124,8 @@
 
 
 <script>
+import { convertItemToCartObject } from "../../Helpers/helperFunctions";
+
 export default {
     props: [
         "itemDetails"
@@ -131,16 +134,30 @@ export default {
         return {
             currentColor: "Haki",
             currentSize: "None",
+            currentColorObject: {
+            },
         }
     },
     methods: {
-        changeCurrentOver(name) {
-            this.currentColor = name;
+        changeCurrentOver(color) {
+            this.currentColor = color;
+        },
+        getCurrentColorObject(colorObj) {
+            console.log(colorObj);
+            this.currentColorObject = colorObj;
         },
         changeCurrentSize(name) {
             console.log(name);
             this.currentSize = name;
         },
+        addToCart() {
+            let cartItem = Object.assign({}, this.itemDetails);
+            cartItem.chosenColor = this.currentColorObject.name;
+            cartItem.chosenColorCode = this.currentColorObject.color;
+            cartItem.chosenSize = this.currentSize;
+            cartItem = convertItemToCartObject(cartItem);
+            this.$store.dispatch("addToCart", cartItem);
+        }
     },
 }
 

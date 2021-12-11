@@ -18,7 +18,7 @@
 export default {
     computed: {
          finalPrice(){
-          return this.$store.getters.finalCartPrice;
+          return this.$store.getters.totalCartPrice;
       },
     },
     methods: {

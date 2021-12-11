@@ -58,6 +58,7 @@
 .c-black{
   color: #1c1c1c !important;
 }
+
 .item-color {
   border-radius: 50%;
   border: 1px solid black;
@@ -65,3 +66,35 @@
 }
 
 .context-menu {cursor: context-menu !important;}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: 32px;
+  left: 0;
+  background-color: #f9f9f9;
+  min-width: 100vw;
+  width:100vw;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  animation-duration: 0.2s;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+
+}
+
+.dropdown:hover  ~ .dropdown-content {
+  display: block;
+  opacity: 1;
+}
+.dropdown-content:hover{
+  display: block;
+}
+
+
+

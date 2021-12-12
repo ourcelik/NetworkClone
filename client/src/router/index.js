@@ -27,6 +27,11 @@ const routes = [
         component:()=> import("@/pages/Cart")
     },
     {
+        name:"CategoryItemsPage",
+        path:"/category/:id",
+        component:()=> import("@/pages/CategoryItems")
+    },
+    {
         name:"AllItemsPage",
         path:"/allitems",
         component:()=> import("@/pages/AllItems")

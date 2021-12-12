@@ -30,6 +30,7 @@
                         <div class="col-3 mx-4 my-1">
                             <div class="btn-group me-2" role="group" aria-label="Second group">
                                 <button
+                                    @click="removeItem(item)"
                                     type="button"
                                     class="btn bg-white rounded-0 border border-1 triple-button fs-4"
                                 >-</button>
@@ -38,6 +39,7 @@
                                     class="btn bg-white rounded-0 context-menu fw-bold border border-top-1 border-bottom-1 triple-button c-black c-black-hover"
                                 >{{item.content.count}}</button>
                                 <button
+                                    @click="addItem(item)"
                                     type="button"
                                     class="btn bg-white rounded-0 border border-1 triple-button fs-4"
                                 >+</button>
@@ -86,7 +88,10 @@ export default {
     methods: {
         removeItem(item) {
             this.$store.dispatch('removeFromCart', item);
-        }
+        },
+        addItem(item) {
+            this.$store.dispatch('addToCart', item);
+        },
     },
 }
 </script>

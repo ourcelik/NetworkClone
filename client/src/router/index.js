@@ -25,6 +25,11 @@ const routes = [
         name:"CartPage",
         path:"/cart",
         component:()=> import("@/pages/Cart")
+    },
+    {
+        name:"AllItemsPage",
+        path:"/allitems",
+        component:()=> import("@/pages/AllItems")
     }
 ];
 

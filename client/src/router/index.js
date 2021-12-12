@@ -25,7 +25,12 @@ const routes = [
         name:"CartPage",
         path:"/cart",
         component:()=> import("@/pages/Cart")
-    }
+    },
+    {
+        name:"CategoryItemsPage",
+        path:"/category/:id",
+        component:()=> import("@/pages/CategoryItems")
+    },
 ];
 
 const router = createRouter({

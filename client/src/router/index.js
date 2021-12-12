@@ -31,6 +31,11 @@ const routes = [
         path:"/category/:id",
         component:()=> import("@/pages/CategoryItems")
     },
+    {
+        name:"AllItemsPage",
+        path:"/allitems",
+        component:()=> import("@/pages/AllItems")
+    }
 ];
 
 const router = createRouter({

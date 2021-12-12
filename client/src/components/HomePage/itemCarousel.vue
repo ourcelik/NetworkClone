@@ -18,7 +18,9 @@
       </template>
     </Carousel>
     <div class="mt-5 mb-5 w-25" v-if="itemCarouselsettings.buttonVisible">
-      <input class="custom-carousel-button w-75 p-3" type="button" value="Tümünü Gör" />
+      <router-link to="/allitems">
+        <input class="custom-carousel-button w-75 p-3" type="button" value="Tümünü Gör" />
+      </router-link>
     </div>
   </div>
 </template>

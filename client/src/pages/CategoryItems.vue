@@ -56,16 +56,16 @@
                         class="dropdown-menu font-little-small rounded-0"
                         aria-labelledby="dropdownMenuButton1"
                     >
-                        <li>
+                        <li @click="SortItems('priceDesc')">
                             <a class="dropdown-item py-2 pointer">Fiyata göre artan</a>
                         </li>
-                        <li>
+                        <li @click="SortItems('priceAsc')">
                             <a class="dropdown-item py-2 pointer">Fiyata göre azalan</a>
                         </li>
-                        <li>
+                        <li @click="SortItems('random')">
                             <a class="dropdown-item py-2 pointer">Editör Sıralaması</a>
                         </li>
-                        <li>
+                        <li @click="SortItems('random')">
                             <a class="dropdown-item py-2 pointer">İndirim Oranına Göre</a>
                         </li>
                     </ul>
@@ -140,6 +140,9 @@ export default {
             else if (query.subCategoryId !== undefined) {
                 this.$store.dispatch('fetchItemsForSubCategory', query.subCategoryId);
             }
+        },
+        SortItems(orderBy) {
+            this.$store.commit('sortCategoryItems', orderBy);
         }
     },
     computed: {

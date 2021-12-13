@@ -448,7 +448,7 @@ const items =  [
             id: 10,
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
-            price: 799.00,
+            price: 850.00,
            colorOptions: [
                 { name: 'Haki', color: "#625e45" },
                 { name: 'Camel', color: "#c4af8a" },
@@ -497,7 +497,7 @@ const items =  [
             id: 11,
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
-            price: 799.00,
+            price: 950.00,
            colorOptions: [
                 { name: 'Haki', color: "#625e45" },
                 { name: 'Camel', color: "#c4af8a" },

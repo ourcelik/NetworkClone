@@ -4,7 +4,7 @@
             <app-breadcrumb class="my-3" />
             <div class="d-flex justify-content-start align-items-center">
                 <p class="font-little-small py-0 my-0 mx-5">
-                    10/
+                    {{ items.length }}/
                     <span class="fw-bold">{{ items.length }} Ürün</span>
                 </p>
                 <img

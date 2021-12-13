@@ -32,7 +32,8 @@
                 v-for="(item, index) in items"
                 :key="index"
                 :item="item"
-                class="mt-2"
+                class="mt-2 "
+                
               />
             </div>
             <cart-button/>

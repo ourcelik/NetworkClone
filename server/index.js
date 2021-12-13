@@ -56,7 +56,7 @@ app.post("/api/cart/removeItem", (req, res) => {
 app.get("/api/items/summary", (req, res) => {
   const itemsSummary = [];
   const itemIds = [];
-  while (itemIds.length < 10) {
+  while (itemIds.length < 15) {
     const itemId = Math.floor(Math.random() * dummyData.dummyItems.length);
     if (!itemIds.includes(itemId)) {
       itemIds.push(itemId);

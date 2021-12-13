@@ -4,10 +4,11 @@
                     <span class="fw-bold font-little-small p-2">Adet</span>
                     <span class="fw-bold font-little-small p-2 me-4">Fiyat</span>
                 </div>
-                <div class="d-flex justify-content-between p-0 mt-3"  v-for="item in items" :key="item.id">
+                <div class="d-flex justify-content-between p-0 mt-3"  v-for="item in items" :key="item.content.id">
                     <div>
                         <img
-                            class="img-fluid m-0 border border-1 border-gray-light p-05"
+                            @click="goToItemDetailPage(item.content.id)"
+                            class="img-fluid m-0 border border-1 border-gray-light p-05 pointer"
                             :src="item.image"
                         />
                     </div>
@@ -92,6 +93,11 @@ export default {
         addItem(item) {
             this.$store.dispatch('addToCart', item);
         },
+        goToItemDetailPage(id)
+        {
+            console.log(id);
+            this.$router.push({ name: 'ItemDetailPage',params: { id: id } });
+        }
     },
 }
 </script>

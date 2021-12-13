@@ -3,7 +3,8 @@
         <h5 class="font-small">{{ itemDetails.content.type }}</h5>
         <h4 class="fw-bold">{{ itemDetails.content.name }}</h4>
         <p class="fw-bold">{{ itemDetails.content.price }} TL</p>
-        <div class="d-flex justify-content-start h-50 align-items-center">
+        <div class="d-flex ">
+            <div class="d-flex justify-content-start h-50 align-items-center">
             <span
                 @mouseover="changeCurrentOver(item.name)"
                 @click="getCurrentColorObject(item)"
@@ -13,8 +14,11 @@
                 :style="{ backgroundColor: item.color }"
                 :key="index"
             ></span>
-            <span class="mx-2 font-small">{{ currentColor }}</span>
+           
         </div>
+         <span class="mx-2 font-small align-self-center">{{ currentColor }}</span>
+        </div>
+        
         <div id="body_size" class="w-100 mt-5">
             <div class="d-flex justify-content-between align-item-center">
                 <p class="font-small fw-bold">Beden Seçimi: <span v-if="!sizeIsChosen" style="color: rgb(236, 0, 0);">Beden seçiniz</span> </p>
@@ -134,7 +138,7 @@ export default {
     ],
     data() {
         return {
-            currentColor: "Haki",
+            currentColor: this.itemDetails.content.colorOptions[0].name,
             currentSize: "None",
             currentColorObject: this.itemDetails.content.colorOptions[0],
             sizeIsChosen: true,

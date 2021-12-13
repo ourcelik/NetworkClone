@@ -118,7 +118,7 @@ app.get("/api/items/getBySearchKey/:key",(req,res)=>{
               item.content.type.toLowerCase().includes(searchKey) ||
               item.content.price.toString().includes(searchKey)
   )           :dummyData.dummyItems;
-  res.send(getItemsSumarry(items));
+  res.send(getItemsSumarry(items.sort(() => Math.random() - 0.5)));
 });
 
 function getItemsSumarry(items) {
@@ -133,6 +133,7 @@ function getItemsSumarry(items) {
   });
   return itemsSummary;
 }
+
 
 app.listen(port, () => {
   console.log(`Server listening on the port::${port}`);

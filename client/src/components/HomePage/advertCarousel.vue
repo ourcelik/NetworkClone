@@ -21,7 +21,7 @@
       
     </div>
     <div class="carousel-inner">
-      <div :ref="'item_' + item.id" class="carousel-item" v-for="item in items" :key="item.id">
+      <div :ref="'item_' + item.id" class="carousel-item pointer" v-for="item in items" :key="item.id" @click="goToAllItemsPage()">
         <img
           :src="item.url"
           class="d-block w-100"
@@ -64,8 +64,12 @@ export default {
   mounted() {
     this.$refs.item_1.classList.add('active');
     this.$refs.slide_1.classList.add('active');
-   
 },
+  methods: {
+    goToAllItemsPage() {
+      this.$router.push({ name: 'CategoryItemsPage',query: { searchKey:"*" } });
+    }
+  },
   
 
 };

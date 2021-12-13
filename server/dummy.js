@@ -881,13 +881,13 @@ const cart = {
                 color: "Vizon",
                 colorCode:"#414744",
                 price: 449.0,
-                totalPrice: 4698.0,
+                totalPrice: 898.0,
             },
             image:
                 "https://img-network.mncdn.com/productimages/2400406322900_1_100_154.jpg",
         },
     ],
-    total: 4798.0,
+    total: 898.0,
     shipping: 30.0,
     discount: 0
 }

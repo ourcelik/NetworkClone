@@ -1,6 +1,6 @@
 <template>
     <app-header/>
-    <router-view/>
+    <router-view :key="$route.fullPath"/>
     <app-cart/>
     <app-footer/>
 </template>

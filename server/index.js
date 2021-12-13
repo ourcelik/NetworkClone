@@ -77,12 +77,53 @@ app.get("/api/items", (req, res) => {
   res.send(dummyData.dummyItems);
 });
 
-app.get("/api/items/:id",(req,res)=>{
+app.get("/api/items/:id", (req, res) => {
   const itemId = req.params.id;
-  const item = dummyData.dummyItems.find(item=>item.content.id===parseInt(itemId));
+  const item = dummyData.dummyItems.find(
+    (item) => item.content.id === parseInt(itemId)
+  );
   res.send(item);
+});
+
+app.get("/api/items/getByCategoryId/:id", (req, res) => {
+  const categoryId = req.params.id;
+  const items = dummyData.dummyItems.filter(
+    (item) => item.content.categoryId === parseInt(categoryId)
+  );
+
+  res.send(getItemsSumarry(items));
+});
+
+app.get("/api/items/getBySubCategoryId/:id", (req, res) => {
+  const subCategoryId = req.params.id;
+  const items = dummyData.dummyItems.filter(
+    (item) => item.content.subCategoryId === parseInt(subCategoryId)
+  );
+  res.send(getItemsSumarry(items));
+
+});
+
+app.get("/api/items/getBySubtitleId/:subTitleId/:id", (req, res) => {
+  const subtitleId = req.params.id;
+  const items = dummyData.dummyItems.filter(
+    (item) => item.content.subtitleId === parseInt(subtitleId) && item.content.subCategoryId === parseInt(req.params.subTitleId)
+  );
+  res.send(getItemsSumarry(items));
+
+});
+
+function getItemsSumarry(items) {
+  const itemsSummary = [];
+  items.forEach((item) => {
+    itemsSummary.push({
+      id: item.content.id,
+      name: item.content.name,
+      price: item.content.price,
+      topPhoto: item.photos[0],
+    });
+  });
+  return itemsSummary;
 }
-);
 
 app.listen(port, () => {
   console.log(`Server listening on the port::${port}`);

@@ -28,8 +28,8 @@ const routes = [
     },
     {
         name:"CategoryItemsPage",
-        path:"/category/:id",
-        component:()=> import("@/pages/CategoryItems")
+        path:"/category",
+        component:()=> import("@/pages/CategoryItems"),
     },
     {
         name:"AllItemsPage",

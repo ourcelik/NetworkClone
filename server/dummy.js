@@ -1,6 +1,9 @@
 const items =  [
     {
         content: {
+            categoryId: 2   ,
+            subCategoryId: 2,
+            subtitleId: 2,
             id: 2,
             type: "NETWORK Smart Casual",
             name: "Slims Fit Haki Jean Pantolon",
@@ -47,6 +50,9 @@ const items =  [
     },
     {
         content: {
+            categoryId: 1,
+            subCategoryId: 2,
+            subtitleId: 2,
             id: 15,
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
@@ -93,6 +99,9 @@ const items =  [
     },
     {
         content: {
+            categoryId: 1,
+            subCategoryId: 2,
+            subtitleId: 2,
             id: 3,
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
@@ -139,6 +148,9 @@ const items =  [
     },
     {
         content: {
+            categoryId: 1,
+            subCategoryId: 2,
+            subtitleId: 2,
             id: 4,
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
@@ -185,6 +197,9 @@ const items =  [
     },
     {
         content: {
+            categoryId: 1,
+            subCategoryId: 2,
+            subtitleId: 2,
             id: 5,
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
@@ -231,6 +246,9 @@ const items =  [
     },
     {
         content: {
+            categoryId: 1,
+            subCategoryId: 2,
+            subtitleId: 2,
             id: 6,
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
@@ -277,6 +295,9 @@ const items =  [
     },
     {
         content: {
+            categoryId: 1,
+            subCategoryId: 2,
+            subtitleId: 2,
             id: 7,
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
@@ -323,6 +344,9 @@ const items =  [
     },
     {
         content: {
+            categoryId: 1,
+            subCategoryId: 2,
+            subtitleId: 2,
             id: 8,
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
@@ -369,6 +393,9 @@ const items =  [
     },
     {
         content: {
+            categoryId: 1,
+            subCategoryId: 2,
+            subtitleId: 2,
             id: 9,
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
@@ -415,6 +442,9 @@ const items =  [
     },
     {
         content: {
+            categoryId: 1,
+            subCategoryId: 2,
+            subtitleId: 2,
             id: 10,
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
@@ -461,6 +491,9 @@ const items =  [
     },
     {
         content: {
+            categoryId: 1,
+            subCategoryId: 2,
+            subtitleId: 2,
             id: 11,
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
@@ -507,6 +540,9 @@ const items =  [
     },
     {
         content: {
+            categoryId: 1,
+            subCategoryId: 2,
+            subtitleId: 2,
             id: 12,
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
@@ -553,6 +589,9 @@ const items =  [
     },
     {
         content: {
+            categoryId: 1,
+            subCategoryId: 2,
+            subtitleId: 2,
             id: 13,
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",

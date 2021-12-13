@@ -1,6 +1,6 @@
 import { createStore} from 'vuex';
 import {getCart,addToCart,removeFromCart} from '../services/cartService';
-import { getItemsSummary,getItem } from '../services/itemService';
+import { getItemsSummary,getItem,getItemsByCategoryId,getItemsBySubCategoryId,getItemsBySubtitleId } from '../services/itemService';
 
 export default createStore({
     state:{
@@ -8,6 +8,7 @@ export default createStore({
         CompleteOutfit:[],
         lastViewedItems:[],
         homeItems:[],
+        categoryItems:[],
         cart:{
             items:[],
             total:0,
@@ -69,6 +70,9 @@ export default createStore({
         },
         setItem(state,item){
             state.item = item;
+        },
+        setItemsForCategory(state,items){
+            state.categoryItems = items;
         }
     },
     actions:{
@@ -115,8 +119,26 @@ export default createStore({
             getItem(id).then(res => {
                 context.commit('setItem',res.data);
             });
+        },
+        fetchItemsForCategory(context,id){
+            console.log("girdifetchItemsForCategory");
+            getItemsByCategoryId(id).then(res => {
+                context.commit('setItemsForCategory',res.data);
+            });
+        },
+        fetchItemsForSubCategory(context,id){
+            console.log("girdifetchItemsForSubCategory");
+
+            getItemsBySubCategoryId(id).then(res => {
+                context.commit('setItemsForCategory',res.data);
+            });
+        },
+        fetchItemsForSubTitle(context,itemInfo){
+            getItemsBySubtitleId(itemInfo).then(res => {
+                console.log(res.data);
+                context.commit('setItemsForCategory',res.data);
+            });
         }
-        
     },
     getters:{
         finalCartPrice(state){

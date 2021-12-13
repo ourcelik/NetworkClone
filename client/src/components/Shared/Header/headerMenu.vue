@@ -7,6 +7,7 @@
                     :key="category.id"
                     class="black-color fs-6 p-0 pb-1 text-decoration-none menu-link dropdown"
                     href="#"
+                    @click="goToItemsPage(category.id)"
                     @mouseover="showSubMenu(category)"
                 >
                     <span class="fs-7">{{ category.name }}</span>
@@ -38,7 +39,8 @@ export default {
                 {
                     id: 1, name: "KADIN",
                     subtitles: [
-                        {
+                        {   
+                            id:0,
                             name: "Üst Giyim",
                             content: [
                                 { id: 1, name: "Kazak" },
@@ -55,6 +57,7 @@ export default {
                             ],
                         },
                         {
+                            id:1,
                             name: "Alt Giyim",
                             content: [
                                 { id: 1, name: "Pantolon" },
@@ -67,6 +70,7 @@ export default {
                             ],
                         },
                         {
+                            id:2,
                             name: "Dış Giyim",
                             content: [
                                 { id: 1, name: "Mont" },
@@ -77,6 +81,7 @@ export default {
                             ],
                         },
                         {
+                            id:3,
                             name: "Ayakkabı",
                             content: [
                                 { id: 1, name: "Bot" },
@@ -91,6 +96,7 @@ export default {
                             ],
                         },
                         {
+                            id:4,
                             name: "Aksesuar",
                             content: [
                                 { id: 1, name: "Çanta" },
@@ -109,6 +115,7 @@ export default {
                     id: 2,
                     name: "ERKEK", subtitles: [
                         {
+                            id:5,
                             name: "Üst Giyim",
                             content: [
                                 { id: 1, name: "Kazak" },
@@ -124,6 +131,7 @@ export default {
                             ],
                         },
                         {
+                            id:6,
                             name: "Alt Giyim",
                             content: [
                                 { id: 1, name: "Pantolon" },
@@ -135,6 +143,7 @@ export default {
                             ],
                         },
                         {
+                            id:7,
                             name: "Dış Giyim",
                             content: [
                                 { id: 1, name: "Palto" },
@@ -145,6 +154,7 @@ export default {
                             ],
                         },
                         {
+                            id:8,
                             name: "Ayakkabı",
                             content: [
                                 { id: 1, name: "Bot" },
@@ -154,6 +164,7 @@ export default {
                             ],
                         },
                         {
+                            id:9,
                             name: "Aksesuar",
                             content: [
                                 { id: 1, name: "Çanta-Cüzdan" },
@@ -183,6 +194,7 @@ export default {
                 {
                     id: 5, name: "OUTLET",
                     subtitles: [{
+                        id:10,
                         name: "Erkek",
                         content:[
                             {id:1,name:"Giyim"},
@@ -191,6 +203,7 @@ export default {
                         ]
                     },
                     {
+                        id:11,
                         name: "Kadın",
                         content:[
                             {id:1,name:"Giyim"},
@@ -211,6 +224,9 @@ export default {
             this.currentCategoryPhoto = category.categoryPhoto;
 
         },
+        goToItemsPage(id){
+            this.$router.push({ name: "CategoryItemsPage", query: { categoryId: id }, params: { id: id } });
+        }
     },
 
 }

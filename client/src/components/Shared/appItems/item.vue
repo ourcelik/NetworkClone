@@ -1,7 +1,7 @@
 <template>
  <div>
-  <img :src="item.topPhoto" class="card-img-top custom-card-img my-2" :class="{'custom-card-hover':itemSettings.isHover}" alt="...">
-  <div class="text-start row mb-5" >
+  <img :src="item.topPhoto" class="card-img-top custom-card-img my-2 pointer" :class="{'custom-card-hover':itemSettings.isHover}" alt="...">
+  <div class="text-start row mb-5 pointer" >
     <h5 :style="{color:itemSettings.color , fontSize:itemSettings.fontSize}" :class="itemSettings.col +' '+itemSettings.color" class="card-title">{{item.name}}</h5>
     <p :class="itemSettings.col +' '+ itemSettings.textLocation" class="card-text">{{item.price}} ₺</p>
   </div>

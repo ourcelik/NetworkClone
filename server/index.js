@@ -110,6 +110,17 @@ app.get("/api/items/getBySubtitleId/:subTitleId/:id", (req, res) => {
 
 });
 
+app.get("/api/items/getBySearchKey/:key",(req,res)=>{
+  const searchKey = req.params.key.toLowerCase();
+  
+  const items = searchKey !== "*" ? dummyData.dummyItems.filter(
+    (item) => item.content.name.toLowerCase().includes(searchKey) || 
+              item.content.type.toLowerCase().includes(searchKey) ||
+              item.content.price.toString().includes(searchKey)
+  )           :dummyData.dummyItems;
+  res.send(getItemsSumarry(items));
+});
+
 function getItemsSumarry(items) {
   const itemsSummary = [];
   items.forEach((item) => {

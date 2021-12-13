@@ -1,10 +1,10 @@
 <template>
     <div class="row justify-content-between align-items-center custom-container" id="header">
         <!-- searchbar -->
-        <form class="col-4 row">
+        <form class="col-4 row" @submit.prevent="false" >
             <div class="form col-10">
                 <i class="fa fa-search"></i>
-                <input type="text" class="form-control form-input" placeholder="Search anything..." />
+                <input v-model="searchKey" @keyup.enter.prevent="searchByKey()" type="text" class="form-control form-input" placeholder="Elbise, Ceket ara..." />
             </div>
         </form>
         <!-- logo -->
@@ -47,11 +47,17 @@ export default {
     data() {
         return {
             logo: { id: 0, url: 'https://www.network.com.tr/assets/v2/img/Network.jpg', width: '220px' },
+            searchKey:""
         }
     },
     methods:{
-        log(){
-            console.log("sa");
+        searchByKey(){
+            
+            if(this.searchKey.length<1){
+                this.searchKey="*";
+            }
+            this.$router.push({name:"CategoryItemsPage", query:{searchKey:this.searchKey}});
+            this.searchKey="";
         }
     },
     computed: {

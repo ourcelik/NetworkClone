@@ -19,3 +19,7 @@ export async function getItemsBySubCategoryId(id) {
 export async function getItemsBySubtitleId(itemInfo) {
   return appAxios.get(`items/getBySubtitleId/${itemInfo.subCategoryId}/${itemInfo.contentId}`);
 }
+
+export async function getItemsBySearchKey(key) {
+  return appAxios.get(`items/getBySearchKey/${key}`);
+}

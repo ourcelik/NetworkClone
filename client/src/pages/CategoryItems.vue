@@ -140,6 +140,10 @@ export default {
             else if (query.subCategoryId !== undefined) {
                 this.$store.dispatch('fetchItemsForSubCategory', query.subCategoryId);
             }
+            else if (query.searchKey !== undefined){
+                console.log(query.searchKey);
+                this.$store.dispatch('fetchItemsBySearchKey',query.searchKey);
+            }
         },
         SortItems(orderBy) {
             this.$store.commit('sortCategoryItems', orderBy);

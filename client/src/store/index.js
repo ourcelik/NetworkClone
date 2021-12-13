@@ -6,6 +6,7 @@ import {
   getItemsByCategoryId,
   getItemsBySubCategoryId,
   getItemsBySubtitleId,
+  getItemsBySearchKey
 } from "../services/itemService";
 
 export default createStore({
@@ -97,6 +98,9 @@ export default createStore({
         state.categoryItems.sort(() => Math.random() - 0.5);
       }
     },
+    setItemsBySearchKey(state,items){
+      state.categoryItems = items;
+    }
   },
   actions: {
     fetchItemsForHome(context) {
@@ -161,6 +165,11 @@ export default createStore({
         context.commit("setItemsForCategory", res.data);
       });
     },
+    fetchItemsBySearchKey(context,searchKey){
+      getItemsBySearchKey(searchKey).then((res)=>{
+        context.commit("setItemsBySearchKey",res.data);
+      })
+    }
   },
   getters: {
     finalCartPrice(state) {

@@ -153,6 +153,14 @@ export default createStore({
         shippingCartPrice(state){
             return state.cart.shipping;
         },
+        cartItemsQuantity(state){
+            let quantity = 0;
+            state.cart.items.forEach(item => {
+                quantity += item.content.count;
+            }
+            );
+            return quantity;
+        }
         
     },
 });

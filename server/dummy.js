@@ -10,11 +10,11 @@ const items =  [
             price: 2000.00,
             colorOptions: [
                 { name: 'Haki', color: "#625e45" },
-                { name: 'Camel', color: "#c5a076" },
-                { name: 'Siyah', color: "#6b360c" },
-                { name: 'Antrasit', color: "#000000" },
-                { name: 'Ekru', color: "#535051" },
-                { name: 'Kahverengi', color: "#f7f7f4" },
+                { name: 'Camel', color: "#c4af8a" },
+                { name: 'Siyah', color: "#000000" },
+                { name: 'Antrasit', color: "#383e42" },
+                { name: 'Ekru', color: "#cdb891" },
+                { name: 'Kahverengi', color: "#964b00" },
             ],
             sizes: ["25", "26", "27", "28", "29", "30", "31", "32"],
             details: {
@@ -57,13 +57,13 @@ const items =  [
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
             price: 799.00,
-            colorOptions: [
+           colorOptions: [
                 { name: 'Haki', color: "#625e45" },
-                { name: 'Camel', color: "#c5a076" },
-                { name: 'Siyah', color: "#6b360c" },
-                { name: 'Antrasit', color: "#000000" },
-                { name: 'Ekru', color: "#535051" },
-                { name: 'Kahverengi', color: "#f7f7f4" },
+                { name: 'Camel', color: "#c4af8a" },
+                { name: 'Siyah', color: "#000000" },
+                { name: 'Antrasit', color: "#383e42" },
+                { name: 'Ekru', color: "#cdb891" },
+                { name: 'Kahverengi', color: "#964b00" },
             ],
             sizes: ["25", "26", "27", "28", "29", "30", "31", "32"],
             details: {
@@ -106,13 +106,13 @@ const items =  [
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
             price: 799.00,
-            colorOptions: [
+           colorOptions: [
                 { name: 'Haki', color: "#625e45" },
-                { name: 'Camel', color: "#c5a076" },
-                { name: 'Siyah', color: "#6b360c" },
-                { name: 'Antrasit', color: "#000000" },
-                { name: 'Ekru', color: "#535051" },
-                { name: 'Kahverengi', color: "#f7f7f4" },
+                { name: 'Camel', color: "#c4af8a" },
+                { name: 'Siyah', color: "#000000" },
+                { name: 'Antrasit', color: "#383e42" },
+                { name: 'Ekru', color: "#cdb891" },
+                { name: 'Kahverengi', color: "#964b00" },
             ],
             sizes: ["25", "26", "27", "28", "29", "30", "31", "32"],
             details: {
@@ -155,13 +155,13 @@ const items =  [
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
             price: 799.00,
-            colorOptions: [
+           colorOptions: [
                 { name: 'Haki', color: "#625e45" },
-                { name: 'Camel', color: "#c5a076" },
-                { name: 'Siyah', color: "#6b360c" },
-                { name: 'Antrasit', color: "#000000" },
-                { name: 'Ekru', color: "#535051" },
-                { name: 'Kahverengi', color: "#f7f7f4" },
+                { name: 'Camel', color: "#c4af8a" },
+                { name: 'Siyah', color: "#000000" },
+                { name: 'Antrasit', color: "#383e42" },
+                { name: 'Ekru', color: "#cdb891" },
+                { name: 'Kahverengi', color: "#964b00" },
             ],
             sizes: ["25", "26", "27", "28", "29", "30", "31", "32"],
             details: {
@@ -204,13 +204,13 @@ const items =  [
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
             price: 799.00,
-            colorOptions: [
+           colorOptions: [
                 { name: 'Haki', color: "#625e45" },
-                { name: 'Camel', color: "#c5a076" },
-                { name: 'Siyah', color: "#6b360c" },
-                { name: 'Antrasit', color: "#000000" },
-                { name: 'Ekru', color: "#535051" },
-                { name: 'Kahverengi', color: "#f7f7f4" },
+                { name: 'Camel', color: "#c4af8a" },
+                { name: 'Siyah', color: "#000000" },
+                { name: 'Antrasit', color: "#383e42" },
+                { name: 'Ekru', color: "#cdb891" },
+                { name: 'Kahverengi', color: "#964b00" },
             ],
             sizes: ["25", "26", "27", "28", "29", "30", "31", "32"],
             details: {
@@ -253,13 +253,13 @@ const items =  [
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
             price: 799.00,
-            colorOptions: [
+           colorOptions: [
                 { name: 'Haki', color: "#625e45" },
-                { name: 'Camel', color: "#c5a076" },
-                { name: 'Siyah', color: "#6b360c" },
-                { name: 'Antrasit', color: "#000000" },
-                { name: 'Ekru', color: "#535051" },
-                { name: 'Kahverengi', color: "#f7f7f4" },
+                { name: 'Camel', color: "#c4af8a" },
+                { name: 'Siyah', color: "#000000" },
+                { name: 'Antrasit', color: "#383e42" },
+                { name: 'Ekru', color: "#cdb891" },
+                { name: 'Kahverengi', color: "#964b00" },
             ],
             sizes: ["25", "26", "27", "28", "29", "30", "31", "32"],
             details: {
@@ -302,13 +302,13 @@ const items =  [
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
             price: 799.00,
-            colorOptions: [
+           colorOptions: [
                 { name: 'Haki', color: "#625e45" },
-                { name: 'Camel', color: "#c5a076" },
-                { name: 'Siyah', color: "#6b360c" },
-                { name: 'Antrasit', color: "#000000" },
-                { name: 'Ekru', color: "#535051" },
-                { name: 'Kahverengi', color: "#f7f7f4" },
+                { name: 'Camel', color: "#c4af8a" },
+                { name: 'Siyah', color: "#000000" },
+                { name: 'Antrasit', color: "#383e42" },
+                { name: 'Ekru', color: "#cdb891" },
+                { name: 'Kahverengi', color: "#964b00" },
             ],
             sizes: ["25", "26", "27", "28", "29", "30", "31", "32"],
             details: {
@@ -351,13 +351,13 @@ const items =  [
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
             price: 799.00,
-            colorOptions: [
+           colorOptions: [
                 { name: 'Haki', color: "#625e45" },
-                { name: 'Camel', color: "#c5a076" },
-                { name: 'Siyah', color: "#6b360c" },
-                { name: 'Antrasit', color: "#000000" },
-                { name: 'Ekru', color: "#535051" },
-                { name: 'Kahverengi', color: "#f7f7f4" },
+                { name: 'Camel', color: "#c4af8a" },
+                { name: 'Siyah', color: "#000000" },
+                { name: 'Antrasit', color: "#383e42" },
+                { name: 'Ekru', color: "#cdb891" },
+                { name: 'Kahverengi', color: "#964b00" },
             ],
             sizes: ["25", "26", "27", "28", "29", "30", "31", "32"],
             details: {
@@ -400,13 +400,13 @@ const items =  [
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
             price: 799.00,
-            colorOptions: [
+           colorOptions: [
                 { name: 'Haki', color: "#625e45" },
-                { name: 'Camel', color: "#c5a076" },
-                { name: 'Siyah', color: "#6b360c" },
-                { name: 'Antrasit', color: "#000000" },
-                { name: 'Ekru', color: "#535051" },
-                { name: 'Kahverengi', color: "#f7f7f4" },
+                { name: 'Camel', color: "#c4af8a" },
+                { name: 'Siyah', color: "#000000" },
+                { name: 'Antrasit', color: "#383e42" },
+                { name: 'Ekru', color: "#cdb891" },
+                { name: 'Kahverengi', color: "#964b00" },
             ],
             sizes: ["25", "26", "27", "28", "29", "30", "31", "32"],
             details: {
@@ -449,13 +449,13 @@ const items =  [
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
             price: 799.00,
-            colorOptions: [
+           colorOptions: [
                 { name: 'Haki', color: "#625e45" },
-                { name: 'Camel', color: "#c5a076" },
-                { name: 'Siyah', color: "#6b360c" },
-                { name: 'Antrasit', color: "#000000" },
-                { name: 'Ekru', color: "#535051" },
-                { name: 'Kahverengi', color: "#f7f7f4" },
+                { name: 'Camel', color: "#c4af8a" },
+                { name: 'Siyah', color: "#000000" },
+                { name: 'Antrasit', color: "#383e42" },
+                { name: 'Ekru', color: "#cdb891" },
+                { name: 'Kahverengi', color: "#964b00" },
             ],
             sizes: ["25", "26", "27", "28", "29", "30", "31", "32"],
             details: {
@@ -498,13 +498,13 @@ const items =  [
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
             price: 799.00,
-            colorOptions: [
+           colorOptions: [
                 { name: 'Haki', color: "#625e45" },
-                { name: 'Camel', color: "#c5a076" },
-                { name: 'Siyah', color: "#6b360c" },
-                { name: 'Antrasit', color: "#000000" },
-                { name: 'Ekru', color: "#535051" },
-                { name: 'Kahverengi', color: "#f7f7f4" },
+                { name: 'Camel', color: "#c4af8a" },
+                { name: 'Siyah', color: "#000000" },
+                { name: 'Antrasit', color: "#383e42" },
+                { name: 'Ekru', color: "#cdb891" },
+                { name: 'Kahverengi', color: "#964b00" },
             ],
             sizes: ["25", "26", "27", "28", "29", "30", "31", "32"],
             details: {
@@ -547,13 +547,13 @@ const items =  [
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
             price: 799.00,
-            colorOptions: [
+           colorOptions: [
                 { name: 'Haki', color: "#625e45" },
-                { name: 'Camel', color: "#c5a076" },
-                { name: 'Siyah', color: "#6b360c" },
-                { name: 'Antrasit', color: "#000000" },
-                { name: 'Ekru', color: "#535051" },
-                { name: 'Kahverengi', color: "#f7f7f4" },
+                { name: 'Camel', color: "#c4af8a" },
+                { name: 'Siyah', color: "#000000" },
+                { name: 'Antrasit', color: "#383e42" },
+                { name: 'Ekru', color: "#cdb891" },
+                { name: 'Kahverengi', color: "#964b00" },
             ],
             sizes: ["25", "26", "27", "28", "29", "30", "31", "32"],
             details: {
@@ -596,13 +596,13 @@ const items =  [
             type: "NETWORK Smart Casual",
             name: "Slim Fit Haki Jean Pantolon",
             price: 799.00,
-            colorOptions: [
+           colorOptions: [
                 { name: 'Haki', color: "#625e45" },
-                { name: 'Camel', color: "#c5a076" },
-                { name: 'Siyah', color: "#6b360c" },
-                { name: 'Antrasit', color: "#000000" },
-                { name: 'Ekru', color: "#535051" },
-                { name: 'Kahverengi', color: "#f7f7f4" },
+                { name: 'Camel', color: "#c4af8a" },
+                { name: 'Siyah', color: "#000000" },
+                { name: 'Antrasit', color: "#383e42" },
+                { name: 'Ekru', color: "#cdb891" },
+                { name: 'Kahverengi', color: "#964b00" },
             ],
             sizes: ["25", "26", "27", "28", "29", "30", "31", "32"],
             details: {

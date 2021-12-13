@@ -20,8 +20,6 @@ app.get("/api/cart", (req, res) => {
 app.post("/api/cart/addItem", (req, res) => {
   let itemReq = Object.assign({}, req.body);
   let itemDb = dummyData.dummyCart.items.find((item) => {
-    console.log(item.content.id, "sad");
-    console.log(itemReq.content.id);
     return item.content.id === itemReq.content.id;
   });
   console.log(itemDb);

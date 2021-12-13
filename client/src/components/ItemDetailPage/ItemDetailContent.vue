@@ -8,6 +8,7 @@
                 @mouseover="changeCurrentOver(item.name)"
                 @click="getCurrentColorObject(item)"
                 class="w-100 item-color mx-1 pointer"
+                :class="{'active-color': item.name === currentColorObject.name}"
                 v-for="(item, index) in itemDetails.content.colorOptions"
                 :style="{ backgroundColor: item.color }"
                 :key="index"
@@ -16,7 +17,7 @@
         </div>
         <div id="body_size" class="w-100 mt-5">
             <div class="d-flex justify-content-between align-item-center">
-                <p class="font-small fw-bold">Beden Seçimi:</p>
+                <p class="font-small fw-bold">Beden Seçimi: <span v-if="!sizeIsChosen" style="color: rgb(236, 0, 0);">Beden seçiniz</span> </p>
                 <p class="font-xsmall fw-bold pointer">Beden Tablosu</p>
             </div>
             <hr class="mt-0" />
@@ -32,8 +33,8 @@
             <hr />
         </div>
         <div id="cart-add" class="align-self-stretch row align-items-center mt-4">
-            <button @click="addToCart()"  data-bs-toggle="modal"
-                    data-bs-target="#cartModal" class="custom-button-cart mx-2 col-9">SEPETE EKLE</button>
+            <button @click="addToCart()"  :data-bs-toggle="modalName"
+                    :data-bs-target="cartName" class="custom-button-cart mx-2 col-9">SEPETE EKLE</button>
             <div class="col-1 mx-2 ">
                 <img src="../../assets/images/heart2.png" class="pointer heart-custom" alt="">
             </div>
@@ -135,8 +136,10 @@ export default {
         return {
             currentColor: "Haki",
             currentSize: "None",
-            currentColorObject: {
-            },
+            currentColorObject: this.itemDetails.content.colorOptions[0],
+            sizeIsChosen: true,
+            modalName: "",
+            cartName: "",
         }
     },
     methods: {
@@ -148,16 +151,24 @@ export default {
             this.currentColorObject = colorObj;
         },
         changeCurrentSize(name) {
-            console.log(name);
             this.currentSize = name;
+            this.modalName = "modal";
+            this.cartName = "#cartModal";
+            this.sizeIsChosen = true;
+
         },
         addToCart() {
-            let cartItem = Object.assign({}, this.itemDetails);
-            cartItem.chosenColor = this.currentColorObject.name;
-            cartItem.chosenColorCode = this.currentColorObject.color;
-            cartItem.chosenSize = this.currentSize;
-            cartItem = convertItemToCartObject(cartItem);
-            this.$store.dispatch("addToCart", cartItem);
+            if(this.currentSize === "None") {
+                this.sizeIsChosen = false;
+            }
+            else{
+                let cartItem = Object.assign({}, this.itemDetails);
+                cartItem.chosenColor = this.currentColorObject.name;
+                cartItem.chosenColorCode = this.currentColorObject.color;
+                cartItem.chosenSize = this.currentSize;
+                cartItem = convertItemToCartObject(cartItem);
+                this.$store.dispatch("addToCart", cartItem);
+            }
         }
     },
 }
@@ -224,5 +235,8 @@ color: gray;
 }
 .heart-custom{
     width: 2rem;
+}
+.active-color{
+    border: #272727 solid 2px !important;
 }
 </style>

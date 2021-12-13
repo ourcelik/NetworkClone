@@ -12,12 +12,15 @@
         <!-- settings -->
         <div class="col-2 offset-2 d-flex justify-content-end align-items-center">
             <div>
-               
+               <div class="d-inline absolute-container">
                 <img src="../../../assets/images/cart.png"
-                data-bs-toggle="modal"
+                    data-bs-toggle="modal"
                     data-bs-target="#cartModal"
                     class=" mx-2 pointer settings-icon"
+                    id="cart-icon"
                     alt=""/>
+                    <span id="cart-quantity">{{cartItemsQuantity === 0 ? null : cartItemsQuantity}}</span>
+                    </div>
                 <router-link to="/favourites">
                 <img src="../../../assets/images/heart.png" alt=""
                 class=" mx-2 pointer settings-icon"
@@ -50,7 +53,12 @@ export default {
         log(){
             console.log("sa");
         }
-    }
+    },
+    computed: {
+        cartItemsQuantity() {
+            return this.$store.getters.cartItemsQuantity;
+        }
+    },
 }
 </script>
 
@@ -60,5 +68,22 @@ export default {
 }
 .router-link-active{
     color:#2c3e50;
+}
+#cart-icon{
+    position: absolute;
+    left:-50px;
+}
+#cart-quantity{
+    position: absolute;
+    color: rgb(255, 0, 0);
+    font-size: 14px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    left: -20px;
+    top: -10px;
+    font-weight: bold;
+}
+.absolute-container{
+    position: relative;
 }
 </style>

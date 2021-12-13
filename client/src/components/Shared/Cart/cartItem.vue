@@ -4,7 +4,7 @@
       <img class="img-fluid w-60" :src="item.image"  alt="" />
     </div>
     <div class="d-flex flex-column align-items-start">
-      <span class="font-small fw-bold" id="title">{{
+      <span class="font-small fw-bold text-start" id="title">{{
         item.content.description
       }}</span>
       <span class="font-xsmall mt-2">Adet: {{ item.content.count }}</span>

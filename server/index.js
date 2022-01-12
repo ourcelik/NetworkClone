@@ -70,11 +70,11 @@ app.get("/api/items/summary", (req, res) => {
   }
   res.send(itemsSummary);
 });
-
+//done
 app.get("/api/items", (req, res) => {
   res.send(dummyData.dummyItems);
 });
-
+//done
 app.get("/api/items/:id", (req, res) => {
   const itemId = req.params.id;
   const item = dummyData.dummyItems.find(
@@ -82,7 +82,7 @@ app.get("/api/items/:id", (req, res) => {
   );
   res.send(item);
 });
-
+//done
 app.get("/api/items/getByCategoryId/:id", (req, res) => {
   const categoryId = req.params.id;
   const items = dummyData.dummyItems.filter(
@@ -91,7 +91,7 @@ app.get("/api/items/getByCategoryId/:id", (req, res) => {
 
   res.send(getItemsSumarry(items));
 });
-
+//done
 app.get("/api/items/getBySubCategoryId/:id", (req, res) => {
   const subCategoryId = req.params.id;
   const items = dummyData.dummyItems.filter(
@@ -101,6 +101,7 @@ app.get("/api/items/getBySubCategoryId/:id", (req, res) => {
 
 });
 
+//done
 app.get("/api/items/getBySubtitleId/:subTitleId/:id", (req, res) => {
   const subtitleId = req.params.id;
   const items = dummyData.dummyItems.filter(

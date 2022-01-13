@@ -14,9 +14,12 @@ app.get("/", (req, res) => {
   res.send("Selamlar");
 });
 
+//done
 app.get("/api/cart", (req, res) => {
   res.send(dummyData.dummyCart);
 });
+
+//done
 app.post("/api/cart/addItem", (req, res) => {
   let itemReq = Object.assign({}, req.body);
   let itemDb = dummyData.dummyCart.items.find((item) => {
@@ -33,6 +36,7 @@ app.post("/api/cart/addItem", (req, res) => {
   res.send("success");
 });
 
+//done
 app.post("/api/cart/removeItem", (req, res) => {
   const itemId = Object.assign({}, req.body);
   const item = dummyData.dummyCart.items.find(
@@ -53,6 +57,7 @@ app.post("/api/cart/removeItem", (req, res) => {
   res.send("success");
 });
 
+//not needed
 app.get("/api/items/summary", (req, res) => {
   const itemsSummary = [];
   const itemIds = [];
@@ -111,6 +116,7 @@ app.get("/api/items/getBySubtitleId/:subTitleId/:id", (req, res) => {
 
 });
 
+//done
 app.get("/api/items/getBySearchKey/:key",(req,res)=>{
   const searchKey = req.params.key.toLowerCase();
   

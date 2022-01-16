@@ -41,6 +41,7 @@ export default {
     Register,
     OrderFollow
   },
+  
   data() {
     return {
       activeTab: "Login",

@@ -57,7 +57,15 @@ export default {
     CartButton
   },
   created() {
-    this.$store.dispatch("fetchCart");
+     if (localStorage.getItem("user") == null) {
+      this.items = this.$store.state.cart.items;
+    }
+    else
+    {
+      let user = JSON.parse(localStorage.getItem("user"));
+      console.log(user.id);
+      this.$store.dispatch("fetchCart",user.id);
+    }
   },
   
   

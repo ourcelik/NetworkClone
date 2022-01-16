@@ -1,7 +1,7 @@
-const functions = require('firebase-functions');
-const admin = require('firebase-admin');
-const express = require('express');
-const { ApolloServer, gql } = require('apollo-server-express');
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
+const express = require("express");
+const { ApolloServer, gql } = require("apollo-server-express");
 
 const serviceAccount = require("./networkclone-156e4-firebase-adminsdk-rsvgk-f380606048.json");
 
@@ -56,7 +56,7 @@ const typeDefs = gql`
     }
     type cartItem {
         content: cartItemContent
-        image: String
+        cartImage: String
     }
 
     type Item {
@@ -75,15 +75,6 @@ const typeDefs = gql`
         userId: ID!
     }
 
-    type Query {
-        items: [Item]
-        getItemById(id: ID!): Item
-        getItemByCategoryId(id: Int!): [Item]
-        getItemBySubCategoryId(id: Int!): [Item]
-        getItemBySubTitleId(subCategoryId: Int!,subTitleId:Int!): [Item]
-        getItemBySearchKey(key: String!): [Item]
-        getCartByUserId(userId: ID!): Cart
-    }
     input ItemInputContent {
         color: String
         colorCode: String
@@ -97,7 +88,7 @@ const typeDefs = gql`
     input itemInput {
         userId: ID!
         content: ItemInputContent
-        image: String
+        cartImage: String
     }
     input removeItemInput {
         userId: ID!
@@ -118,6 +109,13 @@ const typeDefs = gql`
         email:String
         id:ID!
     }
+    type mainAdvert{
+        id:ID!
+        url:String!
+    }
+    type mainAdverts{
+        mainAdverts:[mainAdvert]
+    }
     input loginInput{
         email:String!
         password:String!
@@ -125,6 +123,7 @@ const typeDefs = gql`
     
     input initializeCartItemInput {
         content: ItemInputContent
+        cartImage: String
         image: String
     }
     
@@ -132,6 +131,17 @@ const typeDefs = gql`
         itemInputs: [initializeCartItemInput]
         userId: ID!
 
+    }
+    
+    type Query {
+        items: [Item]
+        getItemById(id: ID!): Item
+        getItemByCategoryId(id: Int!): [Item]
+        getItemBySubCategoryId(id: Int!): [Item]
+        getItemBySubTitleId(subCategoryId: Int!,subTitleId:Int!): [Item]
+        getItemBySearchKey(key: String!): [Item]
+        getCartByUserId(userId: ID!): Cart
+        getMainAdverts: mainAdverts
     }
     type Mutation {
         addToUserCart(itemInput:itemInput): Cart
@@ -141,21 +151,13 @@ const typeDefs = gql`
         initializeCart(initializeCartInput:initializeCartInput): Cart
     }
     `;
-// db.collection('items').get().then(snapshot => {
-//     snapshot.docs.map(doc => {
-//         db.collection("items").doc(doc.id).collection('content').get().then(snapshot => {
-//             console.log(snapshot.docs.map(doc => doc.data()));
-//         })
-//     }
-//         );
-// });
+
 
 const resolvers = {
     Query: {
         items: () => {
-            return db.collection('items').get().then(snapshot => {
+            return db.collection("items").get().then(snapshot => {
                 return snapshot.docs.map(doc => {
-                    console.log(doc.data().content);
                     return {
                         id: doc.id,
                         content : {
@@ -165,6 +167,21 @@ const resolvers = {
                         photos: doc.data().photos
                     }
                 })
+            })
+
+        },
+        getMainAdverts: () => {
+            return db.collection("mainAdverts").get().then(snapshot => {
+                let adverts = [];
+                snapshot.docs.forEach(doc => {
+                    adverts.push({
+                        id: doc.id,
+                        url: doc.data().url
+                    })
+                })
+                return {
+                    mainAdverts: adverts
+                }
             })
 
         },
@@ -192,7 +209,7 @@ const resolvers = {
             let snapshot = await db.collection("items").get()
             for(let i = 0; i < snapshot.docs.length; i++) {
                 if(snapshot.docs[i].data().content.categoryId == args.id) {
-                    item = {
+                    let item = {
                         id: snapshot.docs[i].id,
                         content : {
                             ...snapshot.docs[i].data().content
@@ -211,7 +228,7 @@ const resolvers = {
             let snapshot = await db.collection("items").get()
             for(let i = 0; i < snapshot.docs.length; i++) {
                 if(snapshot.docs[i].data().content.subCategoryId == args.id) {
-                    item = {
+                    let item = {
                         id: snapshot.docs[i].id,
                         content : {
                             ...snapshot.docs[i].data().content
@@ -231,8 +248,7 @@ const resolvers = {
             let snapshot = await db.collection("items").get()
             for(let i = 0; i < snapshot.docs.length; i++) {
                 if(snapshot.docs[i].data().content.subtitleId == args.subTitleId && snapshot.docs[i].data().content.subCategoryId == args.subCategoryId) {
-                    console.log(snapshot.docs[i].data());
-                    item = {
+                    let item = {
                         id: snapshot.docs[i].id,
                         content : {
                             ...snapshot.docs[i].data().content
@@ -248,7 +264,7 @@ const resolvers = {
         },
         getItemBySearchKey: async (_, args) => {
             let items = [];
-            let snapshot = await db.collection('items').get()
+            let snapshot = await db.collection("items").get()
             if (args.key === "*") {
                      snapshot.docs.forEach(doc => {
                         let item = 
@@ -271,7 +287,7 @@ const resolvers = {
                  || snapshot.docs[i].data().content.price.toString().includes(args.key.toLowerCase())
                     || snapshot.docs[i].data().content.type.toLowerCase().includes(args.key.toLowerCase())
                  ) {
-                    item = {
+                    let item = {
                         id: snapshot.docs[i].id,
                         content : {
                             ...snapshot.docs[i].data().content
@@ -286,17 +302,20 @@ const resolvers = {
 
         },
         getCartByUserId: async (_, args) => {
-            console.log(args.userId);
+            console.log(args);
+            let userId = args.userId;
             let cart = {};
-            let snapshot = await db.collection("carts").doc(args.userId.toString()).get()
-            if(snapshot.exists) {
+            let snapshot = await db.collection("carts").where("userId", "==", userId).get()
+            console.log(snapshot.docs[0].data());
+            if(snapshot.docs[0].data().items.length > 0) {
+                console.log("aloooo");
                 cart = {
-                    id: snapshot.id,
-                    items: snapshot.data().items,
-                    shipping: snapshot.data().shipping,
-                    total: snapshot.data().total,
-                    discount: snapshot.data().discount,
-                    userId: snapshot.data().userId
+                    id: snapshot.docs[0].id,
+                    items: snapshot.docs[0].data().items,
+                    shipping: snapshot.docs[0].data().shipping,
+                    total: snapshot.docs[0].data().total,
+                    discount: snapshot.docs[0].data().discount,
+                    userId: snapshot.docs[0].data().userId
                 }
                 return cart;
             }
@@ -309,16 +328,17 @@ const resolvers = {
 },
     Mutation: {
         addToUserCart: async (_, {itemInput}) => {
+            console.log(itemInput);
             let indexOf = -1;
             let snapshot = await db.collection("carts").where("userId", "==", itemInput.userId).get()
             let found = snapshot.docs[0].data().items.find((item,index) => {
-                if(item.content.id == itemInput.itemInputContent.id) {
+                if(item.content.id == itemInput.content.id) {
                     indexOf = index;
                     return true
                 }
             })
-            console.log(indexOf);
             if(found != null) {
+                console.log(found);
                 found.content.count += 1;
                 found.content.totalPrice = found.content.count * found.content.price;
                 let items = snapshot.docs[0].data().items;
@@ -330,12 +350,11 @@ const resolvers = {
             }
             else {
                 let item = {
-                    content: itemInput.itemInputContent,
-                    cartImage: itemInput.image,
+                    content: itemInput.content,
+                    cartImage: itemInput.cartImage,
                 }
                 let items = snapshot.docs[0].data().items;
                 items.push(item);
-                console.log(items);
 
                 snapshot.docs[0].ref.update({
                     items: items,
@@ -352,22 +371,27 @@ const resolvers = {
             let snapshot = await db.collection("carts").where("userId", "==", removeItemInput.userId).get()
             let data = snapshot.docs[0].data();
             let index = data.items.findIndex(item => item.content.id == removeItemInput.itemId);
+            console.log(index);
+            console.log(removeItemInput);
             if(data.items[index].content.count > 1) {
                 data.items[index].content.count -= 1;
                 data.items[index].content.totalPrice = data.items[index].content.count * data.items[index].content.price;
                 data.total -= data.items[index].content.price;
             }
             else {
-                data.items.splice(index, 1);
                 data.total -= data.items[index].content.price;
+                data.items =  data.items.filter(item => item.content.id != removeItemInput.itemId);
+                console.log(data.items);
+
             }
+            console.log(data.items.length);
             snapshot.docs[0].ref.update({
                 items: data.items,
                 total: data.total
             })
             return {
                 id: snapshot.docs[0].id,
-                ...snapshot.docs[0].data()
+                ...(await db.collection("carts").doc(snapshot.docs[0].id).get()).data()
             }
 
         },
@@ -410,7 +434,6 @@ const resolvers = {
                 let total = 0
                  initializeCartInput.itemInputs.forEach(item => {
                      total += item.content.price * item.content.count;
-                     total = total + 30;
                      })
 
                 let cart = {
@@ -423,7 +446,7 @@ const resolvers = {
                 let registeredCart = await db.collection("carts").add(cart);
                 return {
                     id: registeredCart.id,
-                    ...registeredCart.data()
+                    ...(await db.collection("carts").doc(registeredCart.id).get()).data()
                 }
             }
             else if(!snapshot.empty && initializeCartInput.itemInputs != null) {
@@ -439,25 +462,23 @@ const resolvers = {
                     else {
                         items.push(item);
                     }
-                    total += item.content.price * item.content.count;
                     
                 })
                 
                 console.log(items);
                 items.forEach(item => {
                     total += item.content.price * item.content.count;
-                    total = total + 30;
                     })
-                snapshot.docs[0].ref.update({
+                let result = await snapshot.docs[0].ref.update({
                     items: items,
                     total: total,
                     shipping:  30,
                     discount:  0
                 })
-
+                console.log(result);
                 return {
                     id: snapshot.docs[0].id,
-                    ...snapshot.docs[0].data()
+                    ...(await db.collection("carts").doc(snapshot.docs[0].id).get()).data()
                 }
             }
             else if (snapshot.empty && initializeCartInput.itemInputs == null) {
@@ -476,10 +497,9 @@ const resolvers = {
     }
 };
 
-//16:00
 const app = express();
 const server = new ApolloServer({ typeDefs, resolvers });
-server.start().then( ()=>{server.applyMiddleware({ app, path: '/', cors: true });});
+server.start().then( ()=>{server.applyMiddleware({ app, path: "/", cors: true });});
 
 
 exports.graphql = functions.https.onRequest(app);

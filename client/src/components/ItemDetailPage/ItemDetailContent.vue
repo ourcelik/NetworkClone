@@ -171,7 +171,15 @@ export default {
                 cartItem.chosenColorCode = this.currentColorObject.color;
                 cartItem.chosenSize = this.currentSize;
                 cartItem = convertItemToCartObject(cartItem);
-                this.$store.dispatch("addToCart", cartItem);
+                if(localStorage.getItem("user") !== null) {
+                    let user = JSON.parse(localStorage.getItem("user"));
+                    cartItem.userId = user.id;
+                    this.$store.dispatch("addToCart", {item: cartItem, userId : user.id});
+                }
+                else {
+                    this.$store.dispatch("addToCartWithoutFetch", cartItem);
+                }
+
             }
         }
     },

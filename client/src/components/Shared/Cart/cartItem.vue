@@ -36,7 +36,15 @@ export default {
   },
   methods: {
     removeItem(item) {
-      this.$store.dispatch("removeFromCart", item);
+       if (localStorage.getItem("user") !== null) {
+                let user = JSON.parse(localStorage.getItem("user"));
+                item.userId = user.id;
+                this.$store.dispatch('removeFromCart', {item:item,userId:user.id});
+
+            }
+            else {
+                this.$store.dispatch('removeFromCartWithoutFetch', item);
+            }
     },
     goToItemDetailPage(id) {
       console.log(id);

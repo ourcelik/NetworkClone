@@ -88,10 +88,25 @@ export default {
     },
     methods: {
         removeItem(item) {
-            this.$store.dispatch('removeFromCart', item);
+            if (localStorage.getItem("user") !== null) {
+                let user = JSON.parse(localStorage.getItem("user"));
+                item.userId = user.id;
+                this.$store.dispatch('removeFromCart', {item:item,userId:user.id});
+            }
+            else {
+                this.$store.dispatch('removeFromCartWithoutFetch', item);
+            }
+                
         },
         addItem(item) {
-            this.$store.dispatch('addToCart', item);
+            if(localStorage.getItem("user") !== null) {
+                    let user = JSON.parse(localStorage.getItem("user"));
+                    item.userId = user.id;
+                    this.$store.dispatch("addToCart", {item: item, userId : user.id});
+                }
+                else {
+                    this.$store.dispatch("addToCartWithoutFetch", item);
+                }
         },
         goToItemDetailPage(id)
         {

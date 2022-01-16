@@ -29,11 +29,9 @@
                     
                 
                     
-                <router-link to="/register">
-                <img src="../../../assets/images/profile.png" alt=""
+                <img @click="goToRegisterPage()" src="../../../assets/images/profile.png" alt=""
                 class=" mx-2 pointer settings-icon"
                 />
-                </router-link>
             </div>
         </div>
     </div>
@@ -58,12 +56,26 @@ export default {
             }
             this.$router.push({name:"CategoryItemsPage", query:{searchKey:this.searchKey}});
             this.searchKey="";
+        },
+        goToRegisterPage(){
+            if(localStorage.getItem("user")!==null){
+                localStorage.removeItem("user");
+                this.$store.state.user = {};
+                this.$store.state.cart.items = [];
+                this.$store.state.cart.total = 0;
+                alert("Çıkış yapıldı");
+
+            }
+            else{
+                this.$router.push({name:"RegisterPage"});
+            }
         }
     },
     computed: {
         cartItemsQuantity() {
             return this.$store.getters.cartItemsQuantity;
         }
+
     },
 }
 </script>

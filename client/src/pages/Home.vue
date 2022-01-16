@@ -1,5 +1,5 @@
 <template>
-    <advert-carousel :items="carouselImages"/>
+    <advert-carousel v-if="carouselImages.length > 0" :items="carouselImages"/>
     <item-carousel  :title="'Sizin İçin Seçtiklerimiz'" :items="items"/>
     <multi-grid-advert/>
     <social-network :socialItems='socialItems'/>
@@ -11,6 +11,7 @@ import AdvertCarousel from "../components/HomePage/advertCarousel.vue";
 import MultiGridAdvert from "../components/HomePage/multiGridAdvert.vue";
 import SocialNetwork from "../components/HomePage/socialNetwork.vue";
 import ItemCarousel from "../components/HomePage/itemCarousel.vue";
+import { getMainAdverts } from "../services/advertService";
 
 export default {
     components: {
@@ -21,14 +22,19 @@ export default {
     },
     created() {
         this.$store.dispatch('fetchItemsForHome');
+         getMainAdverts().then(response => {
+            console.log(response.data.getMainAdverts.mainAdverts);
+            console.log(this.carouselImages);
+
+            this.carouselImages = response.data.getMainAdverts.mainAdverts;
+            console.log(this.carouselImages);
+           
+        });
     },
     data() {
         return {
             carouselImages:[
-                {id:1,url:'https://img-network.mncdn.com/bannerimages/Slider_2021112513242928240.jpg'},
-                {id:2,url:'https://img-network.mncdn.com/bannerimages/Slider_2021111513254469867.jpg'},
-                {id:3,url:'https://img-network.mncdn.com/bannerimages/N_SLIDER_2021120605430860925.jpg'},
-                {id:4,url:'https://img-network.mncdn.com/bannerimages/N_SLIDER_2021102207002572810.jpg'},
+                
             ],
             
             socialItems:[

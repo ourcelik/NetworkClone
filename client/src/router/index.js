@@ -40,9 +40,14 @@ const routes = [
 
 const router = createRouter({
     routes,
-   
     history: createWebHistory()
 });
+router.beforeEach((to,from,next)=>{
+    if(to.name == "RegisterPage" && localStorage.getItem("user") != null){
+        next({name:"HomePage"});
+    }
+    else next()
+})
 router.afterEach(() =>{
     window.scrollTo({behavior:"smooth",top:0});
 })

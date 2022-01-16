@@ -62,8 +62,10 @@ export default {
     }
   },
   mounted() {
-    this.$refs.item_1.classList.add('active');
-    this.$refs.slide_1.classList.add('active');
+    if (this.items.length > 0) {
+      this.$refs.item_1.classList.add('active');
+      this.$refs.slide_1.classList.add('active');
+    }
 },
   methods: {
     goToAllItemsPage() {

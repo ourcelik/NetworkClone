@@ -16,14 +16,12 @@ import { appAxios } from './utils/appAxios';
 
 
 
-
 import { dom } from "@fortawesome/fontawesome-svg-core";
 import router from './router';
 dom.watch();
 const app =  createApp(App)
 app.use(store);
 app.use(router);
-
 app.config.globalProperties.$appAxios = appAxios;
 app.provide('appAxios', appAxios);
 app.mount('#app')

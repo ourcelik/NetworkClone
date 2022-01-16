@@ -1,5 +1,5 @@
 <template>
-    <div class="row justify-content-between align-items-center custom-container" id="header">
+    <div class="row justify-content-between align-items-center custom-container" id="header" style="width: 80%;">
         <!-- searchbar -->
         <form class="col-4 row" @submit.prevent="false" >
             <div class="form col-10">

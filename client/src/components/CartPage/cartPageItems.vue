@@ -36,6 +36,7 @@
                                     class="btn bg-white rounded-0 border border-1 triple-button fs-4"
                                 >-</button>
                                 <button
+                                    data-test="item-count"
                                     type="button"
                                     class="btn bg-white rounded-0 context-menu fw-bold border border-top-1 border-bottom-1 triple-button c-black c-black-hover"
                                 >{{item.content.count}}</button>

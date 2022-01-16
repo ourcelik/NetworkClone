@@ -68,7 +68,7 @@
                     </span>
                 </div>
                 <div class="d-flex align-items-end">
-                    <span class="small-font">
+                    <span data-test="copyright" class="small-font">
                         ©2021 Network | tüm hakları saklıdır.
                     </span>
                 </div>

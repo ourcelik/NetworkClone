@@ -20,9 +20,9 @@
                             <p class="fw-bold">{{shipping}} ₺</p>
                         </div>
                         <hr />
-                        <div class="d-flex justify-content-between">
-                            <p class="fw-bold">Ödenecek Tutar</p>
-                            <p class="fw-bold">{{lastPrice}} ₺</p>
+                        <div data-test="totalCartPrice" class="d-flex justify-content-between">
+                            <p class="fw-bold">Ödenecek Tutar </p>
+                            <p class="fw-bold">{{lastPrice}}₺</p>
                         </div>
 
                         <input

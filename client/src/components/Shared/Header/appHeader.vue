@@ -2,7 +2,7 @@
     <header class="fixed-top bg-white">
         <div class="m-0 p-0">
             <div>
-                <header-top/>
+                <header-top id="header-top" />
                 <hr class="m-2 my-2 mx-0 custom-hr"/>
                 <header-menu/>
                 <hr class="m-2 my-0 mx-0 custom-hr"/>

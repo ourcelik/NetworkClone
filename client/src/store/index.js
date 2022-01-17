@@ -172,14 +172,9 @@ export default createStore({
     fetchCart(context,userId) {
       getCart(userId).then((res) => {
         let cart = res.data.getCartByUserId|| {};
-        let newCart = {...cart};
-        console.log(newCart);
-        newCart.items = [];
         cart.items.forEach((item) => {
-          let newItem = {...item, image: item.cartImage};
-          newCart.items.push(newItem);
+          item.image = item.cartImage;
         });
-        console.log(newCart);
         context.commit("setCart",cart );
       });
     },

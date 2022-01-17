@@ -1,6 +1,11 @@
+import gql from "graphql-tag";
+import { gqlClient } from "../utils/graphqlClient";
+
 export async function getMainAdverts() {
-    let query = `
-    query GetMainAdverts {
+    
+  return gqlClient.query({
+      query: gql`
+      query GetMainAdverts {
         getMainAdverts {
           mainAdverts {
             id
@@ -8,18 +13,6 @@ export async function getMainAdverts() {
           }
         }
       }
-  `
-      console.log("sa cnm");
-    return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-            query,
-        })
-        })
-        .then(r => r.json())
-        .then(r =>{ console.log(r); return r})
+      `
+  })
 }

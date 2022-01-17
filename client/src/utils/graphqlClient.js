@@ -1,5 +1,6 @@
-import axios from "axios";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 
-export const gqlClient = axios.create({
-    baseURL: "https://us-central1-networkclone2.cloudfunctions.net/graphql",
-});
+export const gqlClient = new ApolloClient({
+    uri: 'https://us-central1-networkclone2.cloudfunctions.net/graphql',
+    cache: new InMemoryCache()
+  });

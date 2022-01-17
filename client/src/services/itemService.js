@@ -1,54 +1,51 @@
+import {
+  gql
+} from "@apollo/client";
+import { gqlClient } from "../utils/graphqlClient";
 
 export async function getItem(id) {
-  let query  =`
-  query GetItemById($id: ID!) {
-    getItemById(id: $id) {
-      id
-      
-      cartImage
-      photos
-      content {
-        categoryId
-        subCategoryId
-        subtitleId
+  return gqlClient.query({
+    query: gql`
+    query GetItemById($id: ID!) {
+      getItemById(id: $id) {
         id
-        type
-        name
-        price
-        colorOptions {
+        cartImage
+        photos
+        content {
+          categoryId
+          subCategoryId
+          subtitleId
+          id
+          type
           name
-          color
-        }
-        sizes
-        details {
-          refNo
-          content
-          model {
-            kalca
-            bel
-            gogus
-            boy
-            ayak_Numarasi
+          price
+          colorOptions {
+            name
+            color
           }
-          sample_size
+          sizes
+          details {
+            refNo
+            content
+            model {
+              kalca
+              bel
+              gogus
+              boy
+              ayak_Numarasi
+            }
+            sample_size
+          }
         }
       }
     }
+  `,
+  variables:{
+    id
   }
-  `
-  
-  return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify({
-      query,
-      variables: { id },
-    })
   })
-    .then(r => r.json())
+ 
+    
 }
 
 // export async function getItem(id) {
@@ -56,7 +53,9 @@ export async function getItem(id) {
 // }
 
 export async function getItemsSummary() {
-  let query = `
+
+  return gqlClient.query({
+    query: gql`
     query{
       items {
         id
@@ -71,22 +70,15 @@ export async function getItemsSummary() {
         
       }
     }
-  `
-  return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify({
-      query,
-    })
+  `,
   })
-    .then(r => r.json())
+  
 }
 
 export async function getItemsByCategoryId(id) {
-  let query = `
+  
+  return gqlClient.query({
+    query: gql`
     query{
       getItemByCategoryId(id:${id}){
         content{
@@ -98,22 +90,15 @@ export async function getItemsByCategoryId(id) {
       }
     }
   `
-  
-  return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify({
-      query,
-    })
   })
-    .then(r => r.json())
+
+  
 }
 
 export async function getItemsBySubCategoryId(id) {
-  let query = `
+  
+  return gqlClient.query({
+    query: gql`
     query{
       getItemBySubCategoryId(id:${id}){
         content{
@@ -124,76 +109,50 @@ export async function getItemsBySubCategoryId(id) {
         photos
       }
     }
-  `
-  
-  return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify({
-      query,
-    })
+    `
   })
-    .then(r => r.json())
+
 }
 
 export async function getItemsBySubtitleId(itemInfo) {
-  let query = `
-  query{
-    getItemBySubTitleId(subTitleId:${itemInfo.contentId},subCategoryId:${itemInfo.subCategoryId}){
-      content{
-        id
-        name
-        price
-      }
-      photos
-    }
-  }
-  `
   
-  return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify({
-      query,
-    })
+  return gqlClient.query({
+    query: gql`
+    query{
+      getItemBySubTitleId(subTitleId:${itemInfo.contentId},subCategoryId:${itemInfo.subCategoryId}){
+        content{
+          id
+          name
+          price
+        }
+        photos
+      }
+    }
+    `
   })
-    .then(r => r.json())
+  
+  
 }
 
 export async function getItemsBySearchKey(key) {
-  let query = `
-  query GetItemBySearchKey($key: String!) {
-    getItemBySearchKey(key: $key) {
-      content{
-        id
-        name
-        price
+ 
+  return gqlClient.query({
+    query: gql`
+    query GetItemBySearchKey($key: String!) {
+      getItemBySearchKey(key: $key) {
+        content{
+          id
+          name
+          price
+        }
+        photos
       }
-      photos
     }
-  }
-  `
-  
-  return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify({
-      query,
-      variables : {
-        "key" : key
-      }
-    })
+    `,
+    variables:{
+      key
+    }
   })
-    .then(r => r.json())
-    .then(r => {console.log(r);return r})
+  
 }
 

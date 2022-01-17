@@ -172,9 +172,14 @@ export default createStore({
     fetchCart(context,userId) {
       getCart(userId).then((res) => {
         let cart = res.data.getCartByUserId|| {};
+        let newCart = {...cart};
+        console.log(newCart);
+        newCart.items = [];
         cart.items.forEach((item) => {
-          item.image = item.cartImage;
+          let newItem = {...item, image: item.cartImage};
+          newCart.items.push(newItem);
         });
+        console.log(newCart);
         context.commit("setCart",cart );
       });
     },
@@ -220,7 +225,8 @@ export default createStore({
     fetchItemsForSubCategory(context, id) {
 
     getItemsBySubCategoryId(id).then((res) => {
-        let itemsFromQuery = res.data.getItemBySubTitleId;
+        let itemsFromQuery = res.data.getItemBySubCategoryId;
+        console.log(itemsFromQuery);
         let items = []
         itemsFromQuery.forEach((item) => {
           items.push({

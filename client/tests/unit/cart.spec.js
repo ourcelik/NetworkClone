@@ -56,6 +56,76 @@ describe('CartPageItems.vue', () => {
         })
         expect(wrapper.get("[data-test='item-count']").text()).toBe("1")
     
+    }),
+    it('render item count when increase it', async () => {
+      const wrapper = mount(CartPageItems, {
+          props:{
+              items:[
+                  {
+                      content:{
+                          id:1,
+                          description:'test',
+                          colorCode:'#000000',
+                          color:'Black',
+                          size:'M',
+                          price:10,
+                          totalPrice:10,
+                          count:1,
+                      },
+                      Image:"https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+      
+                  }
+              ]
+          }
+      })
+      let count = parseInt(wrapper.get("[data-test='item-count']").text());
+      await wrapper.setProps({
+        items:[
+            {
+                content:{
+                    count:count+1,
+                },
+            }
+          ]
+      })
+
+      expect(wrapper.get("[data-test='item-count']").text()).toBe((count + 1).toString())
+  
+    }),
+    it('render item count when decrease it', async () => {
+      const wrapper = mount(CartPageItems, {
+          props:{
+              items:[
+                  {
+                      content:{
+                          id:1,
+                          description:'test',
+                          colorCode:'#000000',
+                          color:'Black',
+                          size:'M',
+                          price:10,
+                          totalPrice:10,
+                          count:2,
+                      },
+                      Image:"https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+      
+                  }
+              ]
+          }
+      })
+      let count = parseInt(wrapper.get("[data-test='item-count']").text());
+      await wrapper.setProps({
+        items:[
+            {
+                content:{
+                    count:count-1,
+                },
+            }
+          ]
+      })
+
+      expect(wrapper.get("[data-test='item-count']").text()).toBe((count - 1).toString())
+  
     })
 }
 );

@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const gqlClient = axios.create({
-    baseURL: "http://localhost:5000/networkclone2/us-central1/graphql",
+    baseURL: "https://us-central1-networkclone2.cloudfunctions.net/graphql",
 });

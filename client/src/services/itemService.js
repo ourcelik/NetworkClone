@@ -37,7 +37,7 @@ export async function getItem(id) {
   }
   `
   
-  return fetch('http://localhost:5000/networkclone2/us-central1/graphql', {
+  return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ export async function getItemsSummary() {
       }
     }
   `
-  return fetch('http://localhost:5000/networkclone2/us-central1/graphql', {
+  return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ export async function getItemsByCategoryId(id) {
     }
   `
   
-  return fetch('http://localhost:5000/networkclone2/us-central1/graphql', {
+  return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ export async function getItemsBySubCategoryId(id) {
     }
   `
   
-  return fetch('http://localhost:5000/networkclone2/us-central1/graphql', {
+  return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -153,7 +153,7 @@ export async function getItemsBySubtitleId(itemInfo) {
   }
   `
   
-  return fetch('http://localhost:5000/networkclone2/us-central1/graphql', {
+  return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -180,7 +180,7 @@ export async function getItemsBySearchKey(key) {
   }
   `
   
-  return fetch('http://localhost:5000/networkclone2/us-central1/graphql', {
+  return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

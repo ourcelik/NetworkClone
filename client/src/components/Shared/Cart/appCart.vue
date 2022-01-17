@@ -33,7 +33,7 @@
                 :key="index"
                 :item="item"
                 class="mt-2 "
-                
+                id="cart-item"
               />
             </div>
             <cart-button/>

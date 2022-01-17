@@ -21,7 +21,7 @@
       
     </div>
     <div class="carousel-inner">
-      <div :ref="'item_' + item.id" class="carousel-item pointer" v-for="item in items" :key="item.id" @click="goToAllItemsPage()">
+      <div :ref="'item_' + item.id" data-test="carouselAdvert" class="carousel-item pointer" v-for="item in items" :key="item.id" @click="goToAllItemsPage()">
         <img
           :src="item.url"
           class="d-block w-100"

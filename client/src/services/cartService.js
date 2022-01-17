@@ -26,7 +26,7 @@
           }
       `
           console.log("sa cnm");
-        return fetch('http://localhost:5000/networkclone2/us-central1/graphql', {
+        return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -73,7 +73,7 @@
             item.cartImage = item.image;
         });
 
-        return fetch('http://localhost:5000/networkclone2/us-central1/graphql', {
+        return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -118,7 +118,7 @@
       }
     `
         console.log("sa cnm");
-      return fetch('http://localhost:5000/networkclone2/us-central1/graphql', {
+      return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -148,7 +148,6 @@
           })
           .then(r => r.json())
           .then(r =>{ console.log(r); return r})
-
     }
 
     export async function removeFromCart(itemId,userId) {
@@ -177,7 +176,7 @@
       }
     `
         console.log("sa cnm");
-      return fetch('http://localhost:5000/networkclone2/us-central1/graphql', {
+      return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',

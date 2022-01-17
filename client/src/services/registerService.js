@@ -11,7 +11,7 @@ export async function register(userInput) {
     `
     console.log(userInput);
     
-    return fetch('http://localhost:5000/networkclone2/us-central1/graphql', {
+    return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ export async function login(userInput) {
       }
     `
 
-    return fetch('http://localhost:5000/networkclone2/us-central1/graphql', {
+    return fetch('https://us-central1-networkclone2.cloudfunctions.net/graphql', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

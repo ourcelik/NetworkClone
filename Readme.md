@@ -70,5 +70,5 @@
 
 ## Contributors
 
-- [@ourcelik]([https://](https://github.com/ourcelik))
+- [@ourcelik](https://github.com/ourcelik)
 - [@SefaZorr](https://github.com/sefazorr)

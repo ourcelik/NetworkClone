@@ -11,7 +11,7 @@
 - ##### Screenshot 5
 ![cartPopup_blank](cartPopup_blank.png)
 - ##### Screenshot 6
-![cartPopup](cartPopup.png)
+![cartPopup](CartPopup.png)
 - ##### Screenshot 7
 ![categories](categories.png)
 - ##### Screenshot 8
